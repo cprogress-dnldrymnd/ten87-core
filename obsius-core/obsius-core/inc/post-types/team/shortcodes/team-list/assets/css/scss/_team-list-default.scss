@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Team lists shortcode styles
+   ========================================================================== */
+
+.qodef-team-list {
+	
+	.qodef-e-role {
+		margin: 0;
+		font-size: 13px;
+	}
+	
+	.qodef-e-title {
+		margin: 20px 0 3px;
+	}
+	
+	.qodef-team-member-social-icons {
+		margin: 0;
+	}
+
+	.qodef-e-team-label {
+		border: 1px solid #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 55.6% 0;
+		position: relative;
+
+		@include qodefScreenSize1440 {
+			padding: 54.6% 0;
+		}
+
+		@include qodefScreenSize1366 {
+			padding: 54.1% 0;
+		}
+
+		@include qodefScreenSize1280 {
+			padding: 53.6% 0;
+		}
+
+		@include qodefScreenSize1024 {
+			padding: 52.1% 0;
+		}
+
+		@include qodefScreenSize768 {
+			padding: 54.6% 0;
+		}
+
+		.qodef-e-link {
+			@include qodefAbsoluteLayout();
+			z-index: 2;
+		}
+
+		.qodef-button {
+			font-size: 17px;
+			letter-spacing: 0;
+			line-height: 23px;
+		}
+
+		&:hover {
+			.qodef-button {
+				.qodef-svg--button-arrow {
+					@include qodefButtonArrowHover();
+				}
+			}
+		}
+	}
+
+	.qodef-m-top-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include qodefScreenSize680 {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.qodef-m-title {
+			margin: 0;
+			line-height: 1;
+
+			.qodef-m-title-inner {
+				display: flex;
+				align-items: center;
+				@include qodefScreenSize768 {
+					 display: inline-block;
+					 max-width: 420px;
+				 }
+
+				@include qodefScreenSize680 {
+					max-width: 100%;
+				}
+
+				.qodef-m-icon-wrapper {
+					flex-shrink: 0;
+					margin-right: 8px;
+				}
+			}
+		}
+
+		.qodef-m-subtitle {
+			margin: 14px 0 52px;
+			max-width: 60%;
+			@include qodefScreenSize768 {
+				max-width: 420px;
+			}
+			@include qodefScreenSize680 {
+				margin: 24px 0 48px;
+			}
+		}
+
+		.qodef-m-more {
+			line-height: 1;
+			margin-top: 17px;
+
+			@include qodefScreenSize680 {
+				margin-top: 0;
+				margin-bottom: 58px;
+			}
+
+			a {
+				color: var(--qode-main-color);
+				background-color: transparent;
+				border: 1px solid var(--qode-main-color);
+				border-radius: 5em;
+				font-family: $text-font;
+				font-weight: 300;
+				text-transform: uppercase;
+				font-size: 13px;
+				letter-spacing: .28px;
+				line-height: 1;
+				position: relative;
+				display: inline-flex;
+				vertical-align: middle;
+				width: auto;
+				margin: 0;
+				text-decoration: none;
+				outline: 0;
+				transition: color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				padding: 8px 15px;
+			}
+
+			svg {
+				margin-left: 4px;
+			}
+
+			.qodef-m-more-text {
+				margin: 0;
+				line-height: 1;
+			}
+
+			.qodef-svg--button-arrow {
+				@include qodefButtonArrow();
+			}
+
+			&:hover {
+				.qodef-svg--button-arrow {
+					@include qodefButtonArrowHover();
+				}
+			}
+		}
+	}
+}

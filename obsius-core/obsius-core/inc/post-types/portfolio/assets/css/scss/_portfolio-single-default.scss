@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Portfolio Single styles
+   ========================================================================== */
+
+.qodef-portfolio-single {
+	@include qodefRelativeLayout();
+
+	.qodef-media {
+
+		iframe {
+			max-height: calc(56.25vw);
+		}
+	}
+
+	.qodef-portfolio-title {
+		margin: 0 0 5px;
+	}
+
+	.qodef-portfolio-content, .qodef-portfolio-content p {
+		font-family: $heading-font;
+		font-size: 17px;
+		font-weight: 300;
+		letter-spacing: 0;
+		line-height: 23px;
+		color: var(--qode-main-color);
+	}
+
+	.qodef-portfolio-info {
+
+		> * {
+			display: flex;
+			align-items: flex-start;
+			margin-bottom: 12px;
+			flex-direction: column;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.qodef-e-label {
+			margin: 0 0 10px 0;
+		}
+
+		p, a {
+			margin: 0;
+		}
+
+		.qodef-e-info-item, .entry-date {
+			font-size: 13px;
+			line-height: 28px;
+		}
+
+		.qodef-info--social-share {
+
+			.qodef-social-title {
+				margin-bottom: 9px;
+			}
+
+			.qodef-social-share {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+
+		> .qodef-e {
+			margin-right: 117px;
+
+			&.qodef-info--date {
+				margin-right: 105px;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.qodef-variations--small {
+
+		.qodef-portfolio-info {
+			margin-top: 32px;
+
+			> .qodef-e {
+				margin-bottom: 38px;
+			}
+
+			.qodef-info--social-share {
+
+				.qodef-social-title {
+					margin-bottom: 19px;
+				}
+			}
+		}
+	}
+
+	.qodef-variations--big {
+		margin-bottom: 24px;
+
+		.qodef-e-content {
+			margin-top: 54px;
+		}
+
+		.qodef-portfolio-info {
+			margin-top: -4px!important;
+			display: flex;
+
+			.qodef-info--social-share .qodef-social-title {
+				margin-bottom: 9px;
+			}
+
+		}
+	}
+
+	.qodef-variations--custom {
+
+		.qodef-portfolio-info {
+			display: flex;
+		}
+	}
+
+	.qodef-process {
+
+		&.qodef-layout--vertical {
+
+			.qodef-m-item-text {
+				margin-left: -65px;
+
+				.qodef-e-text {
+
+					&.qodef-e-bottom-description {
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+}

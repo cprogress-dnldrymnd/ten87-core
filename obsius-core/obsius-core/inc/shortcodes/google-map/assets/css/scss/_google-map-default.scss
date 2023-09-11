@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Google Map shortcode styles
+   ========================================================================== */
+
+.qodef-google-map {
+	@include qodefRelativeLayout();
+
+	&.qodef-show-map-border--yes {
+		border: 1px solid var(--qode-main-color);
+	}
+	
+	.qodef-m-map {
+		display: block;
+		width: 100%;
+		
+		iframe,
+		object,
+		embed {
+			width: 100%;
+			display: block;
+		}
+		
+		img {
+			max-width: none;
+		}
+
+		.gm-style .gm-style-iw-c {
+			color: #000;
+		}
+	}
+}

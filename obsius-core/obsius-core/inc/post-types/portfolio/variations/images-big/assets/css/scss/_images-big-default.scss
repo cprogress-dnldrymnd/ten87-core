@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Portfolio Single variation styles
+   ========================================================================== */
+
+.qodef-portfolio-single {
+    
+    &.qodef-layout--images-big {
+        
+        .qodef-media {
+    
+            .qodef-grid-item {
+                display: block;
+                margin-bottom: 28px;
+                float: none;
+            }
+        }
+
+        #qodef-single-portfolio-navigation {
+            width: 95vw;
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            margin: 24px 0 3px;
+
+            @include qodefScreenSize1024 {
+                width: 86vw;
+            }
+        }
+    }
+}

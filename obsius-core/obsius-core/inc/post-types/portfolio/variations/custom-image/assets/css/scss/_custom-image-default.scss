@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Portfolio Single variation styles
+   ========================================================================== */
+.single-portfolio-item {
+
+    &.qodef-layout--custom-image {
+
+        &.qodef-header--transparent {
+
+            #qodef-page-outer {
+                margin-top: 52px;
+            }
+        }
+
+        .qodef-portfolio-info>* {
+            align-items: center;
+
+            .qodef-info--social-share {
+
+                .qodef-social-share {
+
+                    .qodef-social-title.qodef-custom-label {
+                        margin-bottom: 9px;
+                    }
+                }
+            }
+        }
+
+        #qodef-page-inner {
+            padding: 79px 0 34px;
+        }
+
+        .qodef-img-holder {
+
+            .qodef-img-wrapper {
+
+                img {
+                    display: block;
+                    margin: 50px 50px 0;
+                    width: calc(100% - 100px);
+
+                    @include qodefScreenSize1024 {
+                        margin: 50px 72px 0;
+                        width: calc(100% - 144px);
+                    }
+
+                    @include qodefScreenSize768 {
+                        margin: 50px 54px 0;
+                        width: calc(100% - 108px);
+                    }
+
+                    @include qodefScreenSize680 {
+                        margin: 50px 7% 0;
+                        width: 86%;
+                    }
+                }
+            }
+        }
+
+        .qodef-portfolio-single {
+
+            &.qodef-layout--custom-image {
+                text-align: center;
+
+                .qodef-portfolio-info {
+                    display: flex;
+                    justify-content: center;
+                    margin: -4px 0 62px!important;
+                }
+            }
+
+            .qodef-media {
+                display: flex;
+                margin-bottom: 31px;
+
+                .qodef-grid-item {
+                    display: block;
+                    margin-bottom: 33px;
+                }
+            }
+        }
+
+        #qodef-single-portfolio-navigation {
+            width: 94vw;
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            margin: 78px 0 40px;
+
+            @include qodefScreenSize1024 {
+                width: 86vw;
+            }
+        }
+    }
+}

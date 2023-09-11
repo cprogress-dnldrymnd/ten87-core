@@ -1,0 +1,22 @@
+.qodef-button {
+
+    &.qodef-layout--outlined {
+        @include qodefButtonOutlinedColor();
+
+        .qodef-svg--button-arrow {
+            width: 0.692em;
+            height: 0.692em;
+            margin-left: 4px;
+
+            @include qodefButtonArrow();
+        }
+
+        &:hover {
+            @include qodefButtonOutlinedHoverColor();
+
+            .qodef-svg--button-arrow {
+                @include qodefButtonArrowHover();
+            }
+        }
+    }
+}

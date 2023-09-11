@@ -1,0 +1,182 @@
+/* ==========================================================================
+   Portfolio List shortcode styles
+   ========================================================================== */
+
+.qodef-portfolio-list-double-image {
+
+	&.qodef-subtitle-break--disabled {
+
+		.qodef-m-top-info {
+
+			.qodef-m-subtitle {
+
+				@include qodefScreenSize680 {
+
+					br {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.qodef-m-top-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 52px;
+
+		@include qodefScreenSize680 {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.qodef-m-title {
+			margin: 0;
+			line-height: 1;
+
+			.qodef-m-title-inner {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		.qodef-title-inner {
+			width: 70%;
+
+			@include qodefScreenSize680 {
+				width: 100%;
+			}
+		}
+
+		.qodef-m-subtitle {
+			margin: 15px 0 0;
+		}
+
+		.qodef-m-button {
+			margin-bottom: 6px;
+
+			@include qodefScreenSize680 {
+				margin-top: 15px;
+			}
+		}
+	}
+
+	.qodef-e-inner,
+	.qodef-e-media,
+	.qodef-e-content {
+		@include qodefRelativeLayout();
+	}
+
+	.qodef-e-media {
+
+		> * {
+			margin-bottom: 30px;
+		}
+
+		iframe {
+			display: block;
+			height: 100%;
+		}
+	}
+
+	.qodef-e-media-image {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		max-width: 100%;
+
+		a, img {
+			display: block;
+			width: 100%;
+		}
+
+		&.qodef--background {
+			width: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			img {
+				visibility: hidden;
+			}
+		}
+	}
+
+	.qodef-e-title {
+		margin: 0;
+	}
+
+	.qodef-e-info {
+
+		> * {
+			@include qodefCategoryStyle();
+		}
+	}
+
+	.qodef-e-excerpt {
+		margin: 21px 0 0;
+	}
+
+	.qodef-e-read-more {
+		margin: 21px 0 0;
+		@include qodefScreenSize680 {
+			margin: 21px 0 20px;
+		}
+	}
+
+	.qodef-e-top-holder {
+		margin-bottom: 2px;
+	}
+
+	.qodef-e-post-link {
+		@include qodefAbsoluteLayout();
+	}
+	
+	.qodef-m-pagination {
+		margin-top: 35px;
+	}
+
+	&.qodef-items--fixed {
+		
+		.qodef-e-image {
+			//because of the custom padding around item
+			height: 100%;
+			overflow: hidden;
+		}
+		
+		.qodef-e-media-image {
+			height: 100%;
+			
+			a {
+				@include qodefRelativeLayout();
+				height: 100%;
+			}
+		}
+	}
+
+	.qodef-custom-margin {
+
+		.qodef-e-inner {
+			width: auto;
+		}
+	}
+
+	&.qodef--has-appear {
+		.qodef-e {
+			.qodef-e-content,
+			.qodef-e-image {
+				opacity: 0;
+				transition: opacity .7s cubic-bezier(0.46, 0, 0.36, 0.99);
+			}
+
+
+			&.qodef--appeared {
+				.qodef-e-content,
+				.qodef-e-image {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.qodef-button {
+
+    &.qodef-layout--filled {
+    
+        &.qodef-html--link {
+            @include qodefButtonFilledColor();
+
+            .qodef-svg--button-arrow {
+                width: 0.692em;
+                height: 0.692em;
+                margin-left: 4px;
+
+                @include qodefButtonArrow();
+            }
+    
+            &:hover {
+                @include qodefButtonFilledHoverColor();
+
+                .qodef-svg--button-arrow {
+                    @include qodefButtonArrowHover();
+                }
+            }
+        }
+    }
+}

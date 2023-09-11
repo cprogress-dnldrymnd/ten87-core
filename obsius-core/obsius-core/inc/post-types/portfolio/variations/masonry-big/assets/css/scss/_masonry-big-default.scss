@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Portfolio Single variation styles
+   ========================================================================== */
+
+.qodef-portfolio-single {
+    
+    &.qodef-layout--masonry-big {
+
+       .qodef-variations--big .qodef-e-content {
+           margin-top: 82px;
+       }
+    }
+}

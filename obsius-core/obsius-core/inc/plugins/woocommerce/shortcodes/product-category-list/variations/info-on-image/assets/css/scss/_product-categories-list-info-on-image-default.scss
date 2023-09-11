@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Product Category List Info on Image styles
+   ========================================================================== */
+
+.qodef-woo-product-category-list.qodef-item-layout--info-on-image, // our shortcode wrapper
+.qodef-woo-product-list { // woo shortcode wrapper
+    .product-category {
+        a {
+            @include qodefRelativeLayout();
+        }
+
+        .qodef-e-inner {
+            &:after {
+                pointer-events: none;
+                @include qodefOverlay();
+            }
+
+            &:hover {
+                &:after {
+                    @include qodefOverlayHover();
+                }
+            }
+        }
+
+        .woocommerce-loop-category__title {
+            left: 50%;
+            margin: 0;
+            padding: 12px 41px;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            z-index:1;
+
+            @at-root .qodef-custom-cursor--enabled &{
+                pointer-events: none;
+            }
+        }
+    }
+
+    .count {
+        display: none;
+    }
+
+    &.qodef-top-info--enabled {
+
+        &.qodef-show-info-top-border--yes {
+
+            .qodef-m-top-info {
+                padding-top: 50px;
+                border-top: 1px solid var(--qode-main-color);
+            }
+        }
+
+        .qodef-m-top-info {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 117px;
+            flex-wrap: wrap;
+
+            .qodef-m-title,
+            .qodef-m-more-text {
+                margin: 0;
+            }
+
+            .qodef-m-title {
+                width: 50%;
+
+                @include qodefScreenSize680 {
+                    width: 100%;
+                }
+            }
+
+            .qodef-more-holder {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: flex-end;
+                max-width: 35%;
+                position: relative;
+
+                @include qodefScreenSize1024 {
+                    max-width: 44.5%;
+                }
+
+                @include qodefScreenSize768 {
+                    max-width: 50%;
+                }
+
+                @include qodefScreenSize680 {
+                    max-width: 100%;
+                    padding-right: 5px;
+                    margin-top: 25px;
+                }
+            }
+
+            .qodef-svg--decoration {
+                position: absolute;
+                top: -2px;
+                left: 0;
+                color: var(--qode-decoration-color);
+
+                @include qodefAsterisk();
+            }
+
+            .qodef-m-more-text {
+                margin-top: 4px;
+                padding-left: 61px;
+                font-size: 25px;
+                line-height: 32px;
+                @include qodefScreenSize680 {
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Blog List Minimal styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	&.qodef-item-layout--minimal {
+
+		article {
+
+			.qodef-e-inner {
+				border-top: 1px solid var(--qode-main-color);
+			}
+
+			
+			.qodef-e-title {
+				max-width: 70%;	
+			}
+			
+			&:last-child {
+
+				.qodef-e-inner {
+					border-bottom: 1px solid var(--qode-main-color);
+				}
+			}
+
+			.qodef-e-content {
+				padding: 32px 0 80px;
+				@include qodefScreenSize680 {
+					padding: 22px 0 80px;
+				}
+			}
+
+			.qodef-e-top-holder {
+				margin-bottom: -8px;
+				@include qodefScreenSize680 {
+					margin-bottom: 17px;
+				}
+
+				.qodef-e-info {
+					display: flex;
+					justify-content: space-between;
+
+					.qodef-e-read-more {
+
+						.qodef-button {
+							top: 4px;
+							@include qodefScreenSize680 {
+								position: absolute;
+								bottom: 25px;
+								top: auto;
+								left: 0;
+							}
+						}
+					}
+				}
+			}
+
+			.qodef-e-bottom-holder {
+				margin-top: 16px;
+
+				.qodef-e-read-more {
+
+					.qodef-button.qodef-layout--textual {
+
+						svg {
+							display: none;
+						}
+
+						.qodef-m-text {
+							font-family: $text-font;
+							font-size: 34px;
+							font-weight: 300;
+							letter-spacing: 0;
+							line-height: 37px;
+						}
+					}
+				}
+			}
+			
+			@include qodefScreenSize680 {
+				margin: 0;
+			}
+		}
+
+		&.qodef--list-minimal-right {
+
+			article {
+				margin: 0;
+
+				.qodef-e-content {
+					display: block;
+					align-items: flex-end;
+					max-width: 50%;
+					float: right;
+					
+					@include qodefScreenSize768 {
+						max-width: 100%;
+					}
+				}
+			}
+		}
+	}
+}

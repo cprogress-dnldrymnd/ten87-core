@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Related Posts styles
+   ========================================================================== */
+
+#qodef-related-posts {
+	@include qodefRelativeLayout();
+	margin-top: 107px;
+	@include qodefScreenSize680 {
+		margin-top: 66px;
+	}
+
+	.qodef-related-blog-label {
+		margin: 0 0 47px;
+	}
+
+	&.qodef--normalize-height {
+
+		@media screen and (min-width: 769px) {
+			.qodef-e-media-image {
+				height: 194px !important;
+				overflow: hidden;
+
+				a {
+					height: 100% !important;
+
+					img {
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+			}
+		}
+
+		.qodef-blog-item {
+			&.format-audio {
+
+				.qodef-e-media-image {
+
+					@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.qodef-blog {
+
+		.qodef-blog-item {
+
+			.qodef-e-media>* {
+				margin-bottom: 14px;
+			}
+
+			.qodef-e-top-holder {
+
+				.qodef-info-categories, .qodef-info-tags {
+					display: none;
+				}
+			}
+
+			.qodef-e-bottom-holder {
+				margin-top: 9px;
+			}
+
+			.qodef-e-excerpt, .qodef-e-bottom-holder .qodef-e-right, .qodef-e-read-more svg {
+				display: none;
+			}
+
+			.qodef-button {
+
+				.qodef-m-text {
+					font-family: $text-font;
+					font-size: 34px;
+					font-weight: 300;
+					letter-spacing: 0;
+					line-height: 37px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+.qodef-button {
+    &.qodef-layout--textual {
+        padding: 0 !important;
+        color: $heading-color;
+        background-color: transparent;
+        border: 0;
+
+        .qodef-m-text {
+            display: inline-block;
+        }
+
+        .qodef-svg--button-arrow {
+            width: 0.692em;
+            height: 0.692em;
+            margin-left: 4px;
+
+            @include qodefButtonArrow();
+        }
+
+        &:hover {
+            color: var(--qode-main-color);
+
+            .qodef-svg--button-arrow {
+                @include qodefButtonArrowHover();
+            }
+        }
+    }
+}

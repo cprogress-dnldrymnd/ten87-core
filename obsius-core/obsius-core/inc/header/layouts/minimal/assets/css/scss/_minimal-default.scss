@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+#qodef-page-header-inner {
+	
+	.qodef-header--minimal & {
+		
+		.qodef-header-logo-link {
+			margin-right: auto;
+		}
+		
+		.qodef-widget-holder {
+			margin-right: 30px;
+
+			.qodef-fullscreen-style {
+				font-size: 11px;
+
+				a {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		&:after {
+			transform: scaleX(1);
+			transform-origin: left;
+			transition: transform $sliding-area-transition-timing, opacity $sliding-area-transition-timing;
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	.qodef-header--minimal.qodef-fullscreen-menu--opened & {
+		&:after {
+			transform: scaleX(0);
+			opacity: 0;
+		}
+	}
+}

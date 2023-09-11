@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Fixed Indent Slider shortcode responsive style - begin
+   ========================================================================== */
+
+$side-spacing-mobile: 50px;
+
+.qodef-fixed-indent-slider-holder-outer {
+
+	@include qodefScreenSize768 {
+		flex-direction: column;
+
+		.qodef-left-info,
+		.qodef-right-slider {
+			width: 100%
+		}
+
+		.qodef-right-slider {
+			padding-top: 30px;
+			padding-left: $side-spacing-mobile;
+		}
+
+		&.qodef-slider--left {
+
+			.qodef-right-slider {
+				padding-left: 0;
+				padding-right: $side-spacing-mobile;
+			}
+		}
+	}
+
+	@include qodefScreenSize680 {
+
+		&.qodef-slider--left {
+
+			.qodef-right-slider {
+				padding-right: 28px;
+			}
+		}
+
+		.qodef-right-slider {
+			padding-top: 30px;
+			padding-left: 28px;
+		}
+
+		.qodef-left-info {
+			.qodef-left-info-content {
+				padding: 0 28px 32px 28px;
+			}
+		}
+
+		&.qodef-slider--left {
+
+			.qodef-left-info {
+				.qodef-left-info-content {
+					padding: 0 28px 32px 28px;
+				}
+			}
+		}
+	}
+
+	@include qodefScreenSize480 {
+	}
+}
+/* ==========================================================================
+   Fixed Indent Slider shortcode responsive style - end
+   ========================================================================== */

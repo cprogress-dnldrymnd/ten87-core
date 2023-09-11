@@ -1,0 +1,199 @@
+/* ==========================================================================
+   Background Highlight Text shortcode styles
+   ========================================================================== */
+
+.qodef-background-highlight-text {
+	@include qodefRelativeLayout();
+	text-align: center;
+	padding: 120px 0 131px;
+
+	@include qodefScreenSize680 {
+		padding: 75px 0 96px;
+	}
+
+	.qodef-text-wrapper {
+		display: flex;
+		flex-direction: column;
+
+		> .qodef-e-link {
+			@include qodefAbsoluteLayout();
+			z-index: 5;
+		}
+	}
+
+	&.qodef-alignment--left {
+
+		.qodef-e-text {
+			text-align: left;
+		}
+	}
+
+	&.qodef-alignment--right {
+		.qodef-e-text {
+			text-align: right;
+		}
+	}
+
+	&.qodef-text-font-size--default {
+		.qodef-e-blob-element {
+			width: 25.23%;
+			height: 43.26%;
+			@include qodefScreenSize680 {
+				width: 45.23%;
+				height: 63.26%;
+			}
+
+			svg {
+				filter: blur(2vh);
+			}
+
+			@at-root .qodef-browser--safari &{
+				filter: blur(2vH);
+
+				svg {
+					filter: none;
+				}
+			}
+		}
+	}
+
+	&.qodef-text-font-size--big {
+		.qodef-e-blob-element {
+			width: 47.23%;
+		}
+
+		.qodef-e-text {
+			font-size: 116px;
+			line-height: 0.966em;
+
+			@include qodefScreenSize1440 {
+				font-size: 101px;
+			}
+
+			@include qodefScreenSize1280 {
+				font-size: 90px;
+			}
+
+			@include qodefScreenSize1024 {
+				font-size: 76px;
+			}
+
+			@include qodefScreenSize768 {
+				font-size: 58px;
+			}
+
+			@include qodefScreenSize680 {
+				font-size: 40px;
+				line-height: 46px;
+			}
+		}
+	}
+
+	.qodef-e-text {
+		display: block;
+		@include qodefHeadingStyle(h3);
+	}
+
+	.qodef-e-blob-element {
+		width: 25.23%;
+		height: 52.26%;
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 0.95;
+
+		svg {
+			@include qodefBlob();
+		}
+
+		@at-root .qodef-browser--safari &{
+			filter: blur(5vH);
+
+			svg {
+				filter: none;
+			}
+		}
+
+		@include qodefScreenSize1024 {
+			width: 44.23%;
+		}
+
+		@include qodefScreenSize768 {
+			width: 59.23%;
+		}
+
+		@include qodefScreenSize680 {
+			width: 67.23%;
+			left: 50%;
+		}
+	}
+
+	.qodef-e-text {
+		span {
+			display: inline-block;
+		}
+	}
+
+	.qodef-highlight-text {
+		position: relative;
+		width: max-content;
+
+		.qodef-m-text {
+			display: inline-block;
+		}
+
+		.qodef-svg-rounding-holder {
+			display: block;
+			width: 100%;
+			position: absolute;
+			left: -0.190em;
+			top: 50%;
+			transform: translateY(-50%);
+			color: var(--qode-decoration-color);
+
+			@include qodefScreenSize1024 {
+				left: 0;
+				top: 53%;
+			}
+
+			.qodef-svg--rounding {
+				height: 100%;
+				width: 105%;
+
+				path {
+					stroke-dasharray: 2800;
+					stroke-dashoffset: 2800;
+				}
+			}
+		}
+	}
+
+	&.qodef-text-break--disabled {
+
+		@include qodefScreenSize1024 {
+
+			.qodef-e-text {
+				br {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&.qodef-custom-break-text {
+
+		.qodef-e-text {
+			max-width: 85%;
+
+			@include qodefScreenSize1680 {
+				max-width: 100%;
+			}
+		}
+	}
+
+	&.qodef-bht-padding {
+		padding: 125px 0;
+	}
+}

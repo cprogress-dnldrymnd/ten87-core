@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Icon List Item shortcode styles
+   ========================================================================== */
+
+.qodef-icon-list-item {
+	@include qodefRelativeLayout();
+	line-height: 1;
+
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+
+	@include qodefScreenSize1024 {
+
+		&.qodef-alignment-pad--left {
+			text-align: left;
+		}
+
+		&.qodef-alignment-pad--right {
+			text-align: right;
+		}
+
+		&.qodef-alignment-pad--center {
+			text-align: center;
+		}
+	}
+
+	@include qodefScreenSize680 {
+
+		&.qodef-alignment-mobile--left {
+			text-align: left;
+		}
+
+		&.qodef-alignment-mobile--right {
+			text-align: right;
+		}
+
+		&.qodef-alignment-mobile--center {
+			text-align: center;
+		}
+	}
+
+	.qodef-e-title {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin: 0;
+		line-height: 1;
+
+		a {
+			display: block;
+		}
+	}
+
+	span {
+
+		&.qodef-e-title {
+			font-size: 13px;
+		}
+	}
+
+	.qodef-e-title-inner {
+		display: flex;
+		align-items: center;
+	}
+
+	.qodef-icon-holder {
+		flex-shrink: 0;
+		margin-right: 5px;
+		float: none;
+
+		.qodef-icon {
+			font-size: $text-font-size;
+		}
+	}
+
+	&.qodef-icon--custom-icon {
+
+		.qodef-e-icon-wrapper {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+
+			a, img {
+				display: block;
+			}
+		}
+	}
+}

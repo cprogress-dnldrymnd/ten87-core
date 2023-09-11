@@ -1,0 +1,113 @@
+.qodef-button {
+
+    &.qodef-layout--outlined-revealing {
+        @include qodefButtonOutlinedColor();
+        padding: 0;
+        overflow: hidden;
+        backface-visibility: hidden;
+        border-color: transparent;
+        --qodef-revealing-button-background-color: transparent;
+        --qodef-revealing-button-hover-background-color: transparent;
+
+        @at-root .qodef-browser--safari &{
+            transform: translateZ(0);
+        }
+
+        .qodef-initial-arrow {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2.385em; // 31px frpm font 13px
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qodef-svg--button-arrow {
+            width: 0.692em;
+            height: 0.692em;
+            z-index: 1;
+
+            @include qodefButtonArrow();
+
+            @at-root .qodef-browser--safari &{
+                width: 0.7em;
+                height: 0.7em;
+            }
+        }
+
+        .qodef-hidden-content {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 1px solid transparent;
+            backface-visibillity: hidden;
+            padding: 0.62em 1.25em;
+            opacity: 0;
+            transition: all .5s cubic-bezier(.22,.61,.36,1), transform .7s,opacity .3s;
+            clip-path: inset(0 100% 0 0);
+            transform: translateX(calc(100% - 1 * 1.192em));
+
+            .qodef-svg--button-arrow {
+                visibility: hidden;
+
+                path {
+                    transform: none!important;
+                }
+            }
+        }
+
+        .qodef-border-holder {
+            @include qodefAbsoluteLayout();
+            border-radius: 1.192em;
+            border: 1px solid currentColor;
+            background-color: var(--qodef-revealing-button-background-color);
+            transition: $color-transition, $background-color-transition , transform .7s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+            &.qodef-border-1{
+                transform: translateX(calc(100% - 2 * 1.192em));
+            }
+
+            &.qodef-border-2{
+                clip-path: inset(0 0 0 50%);
+            }
+        }
+
+        &:hover {
+            .qodef-border-holder {
+                background-color: var(--qodef-revealing-button-hover-background-color);
+
+                &.qodef-border-1{
+                    transform: translateX(0);
+                }
+            }
+
+            .qodef-svg--button-arrow {
+                @include qodefButtonArrowHover();
+            }
+
+            .qodef-hidden-content {
+                opacity: 1;
+                transform: translateX(0);
+                clip-path: inset(0 0% 0 0);
+                transition: all .7s cubic-bezier(0.22, 0.61, 0.36, 1) 0s,opacity 1s .15s;
+            }
+        }
+
+        /* show button below 1024px */
+        @include qodefScreenSize1024 {
+            .qodef-border-holder {
+                &.qodef-border-1{
+                    transform: translateX(0);
+                }
+            }
+
+            .qodef-hidden-content {
+                opacity: 1;
+                transform: translateX(0);
+                clip-path: inset(0 0% 0 0);
+            }
+        }
+    }
+}

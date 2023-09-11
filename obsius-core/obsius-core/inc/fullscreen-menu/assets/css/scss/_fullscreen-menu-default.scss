@@ -1,0 +1,333 @@
+/* ==========================================================================
+   Full Screen Menu styles
+   ========================================================================== */
+
+#qodef-fullscreen-area {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $box-background-color;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow-x: hidden !important;
+	overflow-y: hidden;
+	transition: $sliding-area-transition;
+	right: -100%;
+	visibility: hidden;
+	z-index: 99; /* smaller than header, bigger than content */
+
+	/* menu item custom class */
+	.qodef-custom-icon {
+
+		> a {
+
+			&:after {
+				display: inline-block;
+				content: '';
+				position: relative;
+				width: 82px;
+				height: 82px;
+				background: url('../img/arrow-menu-big-white.svg') no-repeat;
+				margin: 0 0 0 38px;
+			}
+		}
+	}
+
+	/* gradient top */
+	&:before {
+		content: "";
+		display: block;
+		width: 1px;
+		height: 17%;
+		position: absolute;
+		top: 21%;
+		transform: rotate(-25deg);
+		right: 0;
+		border-radius: 50%;
+		transform-origin: 50% 50%;
+		background-color: #c93c33;
+		color: #c93c33;
+		box-shadow: 0 0 300px 352px currentColor;
+		opacity: .95;
+		z-index: -1;
+		animation: qode-bg-gradient-top-right-fs-menu 10.5s linear infinite forwards;
+		animation-play-state: paused;
+	}
+
+	/* gradient bottom */
+	&:after {
+		content: "";
+		display: block;
+		width: 6%;
+		height: 11%;
+		position: absolute;
+		bottom: -23%;
+		left: 0;
+		border-radius: 50%;
+		transform-origin: 50% 50%;
+		background-color: #c93c33;
+		color: #c93c33;
+		box-shadow: 0 0 300px 352px currentColor;
+		opacity: 0;
+		z-index: -1;
+	}
+	
+	.qodef-content-grid {
+		height: 100%;
+		
+		.qodef-fullscreen-menu {
+			width: 100%;
+		}
+	}
+	
+	.qodef-fullscreen-menu-animate--in & {
+		right: 0%;
+		visibility: visible;
+
+		&:before {
+			animation: qode-fade-in-custom 1s 1 .2s forwards,qode-bg-gradient-top-right-fs-menu 10.5s linear infinite 1s;
+		}
+
+		&:after {
+			animation: qode-fade-in-custom 1s 1 .4s forwards,qode-bg-gradient-bottom-left 7s linear infinite 1s;
+		}
+	}
+
+	.qodef-fullscreen-menu--out &{
+		&:before,
+		&:after {
+			animation: qode-fade-out 1s;
+		}
+	}
+
+
+	&.qodef-fullwidth {
+
+		#qodef-fullscreen-area-inner {
+			padding: 0 50px;
+		}
+	}
+
+	.qodef-widget-holder {
+		margin-right: 30px;
+
+		&.qodef--two {
+			margin-right: 0;
+
+			.qodef-social-icons-group {
+				margin-bottom: 18px;
+				@include qodefScreenSize1440 {
+					margin-bottom: 22px;
+				}
+			}
+		}
+
+		.qodef-fullscreen-style {
+			font-size: 11px;
+
+			a {
+				@include qodefUnderlineInitiallyShown();
+			}
+		}
+	}
+}
+
+#qodef-fullscreen-area-inner {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+	.qodef-fullscreen-area-side-area {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: 0 50px;
+		position: absolute;
+		left: 0;
+		bottom: 22px;
+		
+		@include qodefScreenSize1440 {
+			bottom: 14px;
+		}
+
+		.qodef--two {
+			margin-left: auto;
+		}
+	}
+}
+
+$menu-top-bottom-spacing: 10px 0 5px;
+$menu-level-two-left-spacing: 20px;
+
+.qodef-fullscreen-menu {
+	position: relative;
+	top: 0;
+	margin: 0;
+	text-align: left;
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		
+		li {
+			position: relative;
+			margin: 0;
+			padding: 0;
+			
+			a {
+				
+				.qodef-menu-item-arrow {
+					display: none;
+				}
+			}
+			
+			&.qodef--hide-link {
+				
+				> a {
+					cursor: default;
+				}
+			}
+		}
+		
+		&.sub-menu {
+			display: none;
+		}
+	}
+	
+	.qodef-menu-item-icon {
+		margin-right: 5px;
+	}
+	
+	.qodef-mega-menu-widget-holder {
+		display: none;
+	}
+	
+	> ul {
+		
+		> li {
+			min-width: 922px;
+			min-height: 186px;
+			padding: 13px 0 52px 0;
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+
+			@include qodefScreenSize1440 {
+				min-width: 600px;
+				min-height: 110px;
+				padding: 10px 5px;
+			}
+
+			&:before,
+			&:after {
+				content: "";
+				display: block;
+				height: 1px;
+				width: calc(100vw - 100px);
+				position: absolute;
+				left: 0;
+				background-color: var(--qode-main-color);
+			}
+
+			&:before {
+				top: 0;
+			}
+
+			&:after {
+				content: none;
+				bottom: 0;
+			}
+
+			&:last-child {
+
+				&:after {
+					content: "";
+				}
+			}
+			
+			> a {
+				@include qodefMenuLevelOneInitialStyle(h1);
+				@include qodefScreenSize1440 {
+					font-size: 75px;
+				}
+				.qodef-menu-item-text {
+					margin-left: -9px;
+
+					&:after {
+						content: none;
+					}
+				}
+				
+				&:hover {
+					@include qodefMenuLevelOneHoverStyle();
+				}
+			}
+			
+			&.current-menu-ancestor,
+			&.current-menu-item {
+				
+				> a {
+					@include qodefMenuLevelOneHoverStyle();
+				}
+			}
+		}
+	}
+
+	.qodef-drop-down-second {
+		position: relative;
+		top: -3px;
+		transform: translateX(100%);
+	}
+	
+	.qodef-drop-down-second-inner {
+		
+		> ul {
+			padding: 0; // $menu-top-bottom-spacing
+			display: block !important; // always visible
+		}
+		
+		ul {
+			padding-left: 0; //$menu-level-two-left-spacing
+			
+			li {
+				
+				> a {
+					@include qodefMenuLevelTwoInitialStyle();
+					@include qodefMenuLevelTwoInitialTypographyStyle();
+					@include qodefScreenSize1440 {
+						margin: 10px 0;
+					}
+					
+
+					.qodef-menu-item-text {
+
+						&:after {
+							bottom: 1px;
+						}
+					}
+					
+					&:hover {
+						@include qodefMenuLevelTwoHoverStyle();
+					}
+				}
+				
+				&.current-menu-ancestor,
+				&.current-menu-item {
+					
+					> a {
+						@include qodefMenuLevelTwoHoverStyle();
+					}
+				}
+			}
+		}
+	}
+}

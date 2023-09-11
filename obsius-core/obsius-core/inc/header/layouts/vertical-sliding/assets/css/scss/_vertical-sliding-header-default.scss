@@ -1,0 +1,299 @@
+/* ==========================================================================
+   Vertical Sliding layout styles
+   ========================================================================== */
+
+$vertical-sliding-header-width--open: 959px;
+$vertical-sliding-header-width--initial: 75px;
+
+$vertical-sliding-content-grid-width-responsive-map: (
+        1400 : (
+                responsive-break: (
+                        $screen-size-1367: $screen-size-1680,
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-1100,
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        ),
+        1300 : (
+                responsive-break: (
+                        $screen-size-1367: $screen-size-1680,
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-1100,
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        ),
+        1200 : (
+                responsive-break: (
+                        $screen-size-1367: $screen-size-1440,
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-1100,
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        ),
+        1100 : (
+                responsive-break: (
+                        $screen-size-1281: $screen-size-1366,
+                        $screen-size-1025: $screen-size-1280,
+                ),
+                content-grid-width: (
+                        $content-grid-width-screen-size-1200,
+                        $content-grid-width-screen-size-1024,
+                )
+        )
+);
+
+.qodef-header--vertical-sliding {
+    .qodef-content-grid,
+    section.qodef-elementor-content-grid > .elementor-container {
+        @each $key, $values in $vertical-sliding-content-grid-width-responsive-map {
+            $index: 1;
+
+            @each $responsive-key, $responsive-value in map-deep-get($vertical-sliding-content-grid-width-responsive-map, $key, 'responsive-break') {
+                @media only screen and (min-width: $responsive-key) and (max-width: $responsive-value) {
+                    @at-root .qodef-content-grid-#{$key}#{&} {
+                        width: #{nth(map-deep-get($vertical-sliding-content-grid-width-responsive-map, $key, 'content-grid-width'), $index)}
+                    }
+                }
+
+                $index: $index + 1;
+            }
+        }
+    }
+
+    #qodef-page-header {
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: $vertical-sliding-header-width--initial;
+
+        #qodef-page-header-inner.qodef-skin--light .qodef-header-logo-link img.qodef--main {
+            opacity: 1;
+        }
+    
+        .qodef-header-logo-link {
+        
+            img {
+                max-width: unset;
+            }
+        }
+        
+        .qodef-widget-holder {
+            height: auto;
+            margin: 0;
+
+            /* custom css class */
+            .qodef-vertical-copyright {
+                writing-mode: vertical-lr;
+                transform: rotate(180deg);
+                transform-origin: center center;
+                margin: 0;
+                font-size: 11px;
+                line-height: 1.636em;
+
+                .qodef-copyright-mark {
+                    transform: rotate(90deg);
+                    display: inline-block;
+                    left: 1px;
+                    position: relative;
+                }
+            }
+        }
+    }
+
+    #qodef-page-header-inner {
+        padding: 0;
+    }
+
+    .qodef-vertical-sliding-area {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        padding: 26px 0;
+
+        &.qodef--static {
+            
+            .qodef-header-logo-link,
+            .qodef-widget-holder {
+                animation: qode-fade-in .25s $sliding-area-transition-time linear both;
+            }
+    
+            background-color: #000;
+            background: url('../img/background-pattern.jpg') repeat center center;
+            width: 100%;
+            border-right: 1px solid #fff;
+            z-index: 1;
+
+            .qodef-vertical-sliding-menu-opener {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        &.qodef--dynamic {
+            background-color: #000;
+            background: url('../img/background-pattern.jpg') repeat center center;
+            border-right: 1px solid #fff;
+            transform: translateX(-#{ $vertical-sliding-header-width--initial + $vertical-sliding-header-width--open});
+            padding-left: $vertical-sliding-header-width--initial;
+            position: fixed;
+            top: 0;
+            transition: all .8s cubic-bezier(.77,0,.175,1);
+            width: $vertical-sliding-header-width--open;
+            justify-content: center;
+            @include qodefScreenSize1440 {
+                width: 50%;
+            }
+
+            .qodef-header-vertical-sliding-navigation {
+                height: auto;
+                margin-top: 22px;
+            }
+
+            .qodef-header-logo-link,
+            .qodef-widget-holder {
+                margin-right: $vertical-sliding-header-width--initial;
+                align-self: flex-start;
+                padding-left: 48px;
+                padding-top: 30px;
+            }
+
+            .qodef-header-logo-link {
+                img {
+                    position: relative !important; // override default logo style
+                    top: 0 !important; // override default logo style
+                    transform: none !important; // override default logo style
+                }
+            }
+
+            .qodef-widget-holder {
+
+                .qodef-social-icons-group {
+
+                    .qodef-icon-holder {
+                        &.qodef--textual {
+                            font-size: 13px;
+                            line-height: 1;
+
+                            a {
+                                border: 1px solid currentColor;
+                                border-radius: 50%;
+                                line-height: 2.385em;
+                                min-width: 2.385em;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #qodef-page-header.qodef-vertical-sliding-menu--opened {
+        .qodef--dynamic {
+            transform: translateX(0);
+        }
+    }
+
+    &.admin-bar {
+        #qodef-page-header,
+        .qodef--dynamic {
+            height: calc(100% - 32px);
+            top: 32px;
+        }
+    }
+
+    #qodef-page-outer,
+    #qodef-page-footer {
+        padding-left: $vertical-sliding-header-width--initial;
+
+        #qodef-page-footer-top-area-inner, #qodef-page-footer-bottom-area-inner {
+            padding: 45px 20px 30px 0;
+
+            @include qodefScreenSize1368 {
+                padding: 45px 80px 30px 0;
+            }
+
+            @include qodefScreenSize1366 {
+                padding: 45px 20px 30px 0 !important;
+            }
+        }
+
+
+        @include qodefScreenSize1024 {
+            padding-left: 0;
+        }
+
+        .widget .qodef-footer-custom-links.qodef-footer-custom-links-padding-right {
+
+            @include qodefScreenSize1366 {
+                padding-right: 35%;
+            }
+
+            @include qodefScreenSize1280 {
+                padding-right: 15%;
+            }
+
+            @include qodefScreenSize1024 {
+                padding-right: 33%;
+            }
+
+            @include qodefScreenSize768 {
+                padding-right: 21%;
+            }
+
+            @include qodefScreenSize680 {
+                padding-right: 0;
+            }
+        }
+
+        &.qodef--footer-logo #qodef-page-footer-bottom-area #qodef-page-footer-bottom-area-inner.qodef-content-grid, &.qodef--footer-logo #qodef-page-footer-top-area #qodef-page-footer-top-area-inner.qodef-content-grid {
+
+            &:after {
+                @include qodefScreenSize1680 {
+                    width: 100%;
+                }
+            }
+        }
+
+        &.qodef--footer-logo #qodef-page-footer-top-area #qodef-page-footer-top-area-inner.qodef-content-grid {
+
+            &:after {
+                @include qodefScreenSize1440 {
+                    width: 91.5%;
+                }
+
+                @include qodefScreenSize1368 {
+                    width: 86.3%;
+                }
+
+                @include qodefScreenSize1366 {
+                    width: 95%;
+                }
+
+                @include qodefScreenSize1280 {
+                    width: 100%;
+                }
+
+                @include qodefScreenSize1024 {
+                    width: 98.7%;
+                }
+            }
+        }
+    }
+}

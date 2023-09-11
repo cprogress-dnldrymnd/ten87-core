@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Portfolio Single responseive styles
+   ========================================================================== */
+
+.qodef-portfolio-single {
+	
+	@include qodefScreenSize1024 {
+
+		.qodef-variations--small {
+
+			.qodef-media {
+				margin: 0 0 50px;
+			}
+		}
+
+		.qodef-variations--big {
+
+			.qodef-portfolio-info {
+				margin-top: 50px;
+			}
+		}
+	}
+
+	@include qodefScreenSize768 {
+
+		.qodef-portfolio-info {
+			display: inline-block!important;
+			width: 100%;
+
+			> * {
+				display: inline-block;
+				width: 49%;
+				margin-right: 0!important;
+				margin-bottom: 38px;
+			}
+
+			.qodef-e {
+
+				&.qodef-info--social-share {
+
+					.qodef-social-share {
+						display: block;
+
+						.qodef-social-title {
+							display: block;
+							margin-bottom: 11px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include qodefScreenSize680 {
+
+		.qodef-portfolio-info {
+
+			> * {
+				width: 100%;
+			}
+
+			.qodef-e {
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

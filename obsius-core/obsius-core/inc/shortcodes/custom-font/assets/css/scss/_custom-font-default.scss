@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Custom Font shortcode styles
+   ========================================================================== */
+
+.widget {
+
+	&.widget_obsius_core_custom_font {
+		margin-bottom: 0 !important;
+	}
+}
+
+.qodef-custom-font {
+	position: relative;
+	margin: 0;
+
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+
+	.qodef-m-bold {
+		font-weight: bold;
+
+		&.qodef-reduce-right-space {
+			margin-right: -0.28em;
+		}
+
+		.qodef-m-regular-style {
+			display: none;
+		}
+	}
+
+	.qodef-sup {
+		position: relative;
+		vertical-align: baseline;
+		font-size: .59em;
+		line-height: 0;
+		top: -0.57em;
+		left: 0;
+		font-weight: 900;
+
+		&:after {
+			content: "";
+			display: block;
+			width: 0.692em;
+			height: 0.095em;
+			background-color: currentColor;
+			position: absolute;
+			left: -0.016em;
+			bottom: -.224em;
+		}
+	}
+}

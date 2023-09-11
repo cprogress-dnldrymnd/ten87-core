@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Portfolio List shortcode variation styles
+   ========================================================================== */
+
+.qodef-portfolio-list-table {
+ 
+	&.qodef-item-layout--table {
+
+		.qodef-e-table-info {
+			display: flex;
+			flex-direction: row;
+			padding-bottom: 15px;
+
+			.qodef-e-project-title,
+			.qodef-e-project-category,
+			.qodef-e-project-client,
+			.qodef-e-project-year {
+
+				&-text {
+					display: block;
+					position: relative;
+					font-size: 25px;
+					line-height: 1.280em;
+					padding-left: 22px;
+					@include qodefScreenSize680 {
+						font-size: 20px;
+						line-height: 26px;
+					}
+
+					&:before {
+						content: "";
+						display: block;
+						width: 0.520em;
+						height: 0.520em;
+						border-radius: 50%;
+						border: 1px solid var(--qode-main-color);
+						position: absolute;
+						left: 0;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+				}
+			}
+
+			.qodef-e-project-category,
+			.qodef-e-project-client,
+			.qodef-e-project-year {
+
+				@include qodefScreenSize480 {
+					display: none;
+				}
+			}
+
+			.qodef-e-project-title {
+				min-width: 40%;
+
+				@include qodefScreenSize1024 {
+					min-width: 43%;
+				}
+
+				@include qodefScreenSize768 {
+					min-width: 37%;
+				}
+
+				@include qodefScreenSize680 {
+					min-width: 32%;
+				}
+			}
+
+			.qodef-e-project-category {
+				min-width: 20%;
+
+				@include qodefScreenSize1024 {
+					min-width: 27%;
+				}
+			}
+
+			.qodef-e-project-client {
+				min-width: 20%;
+			}
+
+			.qodef-e-project-link-hidden {
+				width: 100.16px;
+				height: 5px;
+				margin-left: auto;
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+
+		.qodef-e {
+
+			.qodef-e-inner {
+				padding: 20px 0 23px 0;
+				border-top: 1px solid var(--qode-main-color);
+				min-height: 186px;
+
+				@include qodefScreenSize768 {
+					padding: 20px 0 12px 0;
+					
+					.qodef-e-content {
+						position: initial;
+
+						.qodef-e-button-holder {
+							bottom: 50px;
+						}
+					}
+				}
+
+				@include qodefScreenSize680 {
+					padding: 20px 0 28px 0;
+
+					.qodef-e-content {
+						position: initial;
+
+						.qodef-e-button-holder {
+							bottom: 0;
+						}
+					}
+				}
+			}
+
+			&:last-child {
+
+				.qodef-e-inner {
+					border-bottom: 1px solid var(--qode-main-color);
+				}
+			}
+		}
+
+		.qodef-e-content {
+			display: flex;
+			flex-direction: row;
+
+			@include qodefScreenSize480 {
+				flex-direction: column;
+			}
+
+			.qodef-e-title-holder {
+				min-width: 40%;
+
+				@include qodefScreenSize1024 {
+					min-width: 43%;
+
+					.qodef-e-title {
+						max-width: 70%;
+					}
+				}
+
+				@include qodefScreenSize768 {
+					min-width: 37%;
+
+					.qodef-e-title {
+						max-width: 100%;
+					}
+				}
+			}
+
+			.qodef-e-category-holder {
+				min-width: 20%;
+				display: flex;
+				flex-direction: column;
+
+				@include qodefScreenSize1024 {
+					min-width: 28%;
+				}
+
+				.qodef-info-separator-single {
+					display: none;
+				}
+			}
+
+			.qodef-e-client-holder {
+				min-width: 20%;
+			}
+
+			@include qodefScreenSize768 {
+
+				.qodef-e-client-holder {
+					padding-right: 30px;
+				}
+
+				.qodef-e-year-holder {
+					min-width: 15%;
+				}
+			}
+
+			.qodef-e-button-holder {
+				margin-left: auto;
+				margin-top: 9px;
+
+				@include qodefScreenSize1024 {
+					position: absolute;
+					right: 0;
+					bottom: -11px;
+					transform: translateY(100%);
+				}
+				
+				@include qodefScreenSize680 {
+					bottom: 0;
+					position: relative;
+					transform: none;
+					margin-left: 0;
+					margin-top: 22px;
+				}
+			}
+
+			.qodef-e-category-holder,
+			.qodef-e-client-holder,
+			.qodef-e-year-holder {
+				margin-top: 4px;
+
+				@include qodefScreenSize480 {
+					margin-top: 12px;
+				}
+			}
+		}
+	}
+}

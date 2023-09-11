@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-post-navigation {
+	@include qodefRelativeLayout();
+	margin: 74px 0 3px;
+	
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		a {
+
+			img {
+				max-width: 189px;
+				@include qodefScreenSize680 {
+					display: none
+				}
+			}
+		}
+	}
+	
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+		
+		.qodef-m-pagination-icon {
+			position: relative;
+			top: -2px;
+			display: block;
+			width: 30px;
+			height: auto;
+			fill: currentColor;
+			stroke: none;
+		}
+		
+		&.qodef--prev {
+			left: 0;
+			
+			.qodef-m-pagination-icon {
+				margin-right: 4px;
+			}
+		}
+		
+		&.qodef--next {
+			flex-direction: row-reverse;
+			right: 0;
+			margin-left: auto;
+			text-align: right;
+			
+			.qodef-m-pagination-icon {
+				margin-left: 4px;
+			}
+		}
+	}
+	
+	.qodef-m-nav-label {
+		font-family: $heading-font;
+		font-size: 13px;
+		font-weight: 300;
+		line-height: 20px;
+		letter-spacing: 0.028em;
+		text-transform: uppercase;
+	}
+
+	.qodef-single-post-nav-title {
+		margin: 0;
+		@include qodefScreenSize680 {
+			display: none;
+		}
+	}
+
+	.qodef-single-post-text-holder {
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 165px;
+	}
+
+	.qodef-blog-single-prev, .qodef-blog-single-next {
+
+		.qodef-blog-single-nav-text-holder {
+			display: inline-block;
+            color: var(--qode-main-color);
+            background-color: transparent;
+            border: 1px solid var(--qode-main-color);
+            border-radius: 1.192em;
+			padding: 5px 14px 4px;
+			max-width: 130px;
+
+			svg {
+				float: right;
+				position: relative;
+				top: 5px;
+				margin-left: 5px;
+
+				@include qodefButtonArrow();
+			}
+			
+			.qodef-m-nav-label {
+				float: left;
+			}
+
+			&:hover {
+				svg {
+					@include qodefButtonArrowHover();
+				}
+			}
+		}
+	}
+
+	.qodef-blog-single-prev {
+		display: flex;
+		flex-direction: row;
+
+		img {
+			margin-right: 17px;
+		}
+	}
+
+	.qodef-blog-single-next {
+		display: flex;
+		flex-direction: row-reverse;
+		right: 0;
+		margin-left: auto;
+		text-align: right;
+
+		img {
+			margin-left: 17px;
+		}
+		
+		.qodef-single-post-nav-title {
+			text-align: right;
+		}
+
+		.qodef-single-post-text-holder {
+			align-items: flex-end;
+		}
+	}
+
+}

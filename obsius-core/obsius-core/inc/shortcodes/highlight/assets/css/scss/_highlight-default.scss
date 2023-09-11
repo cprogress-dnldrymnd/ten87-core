@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Highlight shortcode styles
+   ========================================================================== */
+
+.qodef-highlight {
+	margin: 0;
+	padding: 0;
+
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+
+	.qodef-wrapper-inner {
+		position: relative;
+		display: block;
+		padding: 16px 0;
+	}
+
+	&.qodef-show-borders--yes {
+
+		.qodef-wrapper-inner {
+
+			&:before,
+			&:after {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 1px;
+				background-color: currentColor;
+				position: absolute;
+				left: 0;
+			}
+
+			&:before {
+				top: 0;
+			}
+
+			&:after {
+				bottom: 0;
+			}
+		}
+	}
+
+	.qodef-svg--highlight-arrow {
+		width: 0.707em;
+		height: 0.707em;
+		margin-left: 0.11em;
+	}
+	
+	.qodef-highlight-text {
+		position: relative;
+		width: max-content;
+
+		.qodef-m-text {
+			display: inline-block;
+		}
+
+		.qodef-svg-rounding-holder {
+			display: block;
+			width: 100%;
+			position: absolute;
+			left: -0.190em;
+			top: 50%;
+			transform: translateY(-50%);
+			color: var(--qode-decoration-color);
+
+			@include qodefScreenSize1024 {
+				left: 0;
+				top: 53%;
+			}
+
+			.qodef-svg--rounding {
+				height: 100%;
+				width: 105%;
+
+				path {
+					stroke-dasharray: 2800;
+					stroke-dashoffset: 2800;
+				}
+			}
+		}
+	}
+
+	a {
+		.qodef-svg--highlight-arrow {
+			@include qodefButtonArrow();
+		}
+
+		&:hover {
+			.qodef-svg--highlight-arrow {
+				@include qodefButtonArrowHover();
+			}
+		}
+	}
+}
+
+span.qodef-highlight {
+	display: block;
+	@include qodefHeadingStyle();
+	font-size: 139px;
+	line-height: 1.073em;
+
+	@include qodefScreenSize1680 {
+		font-size: 120px;
+	}
+
+	@include qodefScreenSize1440 {
+		font-size: 100px;
+	}
+
+	@include qodefScreenSize1368 {
+		font-size: 94px;
+	}
+
+	@include qodefScreenSize1280 {
+		font-size: 87px;
+	}
+
+	@include qodefScreenSize1024 {
+		font-size: 73px;
+	}
+
+	@include qodefScreenSize768 {
+		font-size: 53px;
+	}
+
+	@include qodefScreenSize680 {
+		font-size: 51px;
+	}
+}
+
+h1.qodef-highlight {
+
+	@include qodefScreenSize1024 {
+		font-size: 85px;
+	}
+
+	@include qodefScreenSize680 {
+		font-size: 42px;
+	}
+}

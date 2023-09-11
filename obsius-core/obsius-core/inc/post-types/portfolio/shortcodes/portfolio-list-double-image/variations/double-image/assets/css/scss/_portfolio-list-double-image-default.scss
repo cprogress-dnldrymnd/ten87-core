@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Portfolio List shortcode variation styles
+   ========================================================================== */
+
+.qodef-portfolio-list-double-image {
+ 
+	&.qodef-item-layout--double-image {
+		position: relative;
+		padding-top: 25px;
+
+		.qodef-e-inner {
+			position: relative;
+			display: flex;
+			flex-direction: row;
+
+			@include qodefScreenSize680 {
+				flex-direction: column;
+			}
+		}
+
+		&:before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: var(--qode-main-color);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+  
+		.qodef-e-content {
+			margin-top: 0;
+			max-width: 33.5%;
+
+			@include qodefScreenSize768 {
+				max-width: 100%;
+				width: 42%;
+			}
+
+			@include qodefScreenSize680 {
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+
+		.qodef-e-title {
+			max-width: 91%;
+
+			@include qodefScreenSize768 {
+				max-width: 80%;
+			}
+		}
+
+		.qodef-grid-item {
+
+			&:last-child {
+
+				.qodef-e-images-holder {
+
+					.qodef-e-images-holder-inner {
+						padding-bottom: 0;
+
+						&:before {
+							height: calc(100% - 5px);
+						}
+
+						@include qodefScreenSize680 {
+
+							&:after {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.qodef-e-images-holder {
+			position: relative;
+			top: 10px;
+
+			@include qodefScreenSize768 {
+				width: 58%;
+			}
+
+			@include qodefScreenSize680 {
+				width: 100%;
+			}
+
+			.qodef-e-images-holder-inner {
+				display: flex;
+				flex-direction: row;
+				margin: 0 -14px 0 -14px;
+				position: relative;
+				padding-bottom: 125px;
+
+				@include qodefScreenSize768 {
+					flex-direction: column;
+				}
+
+				&:before {
+					content: "";
+					display: block;
+					width: 1px;
+					height: 100%;
+					background-color: var(--qode-main-color);
+					position: absolute;
+					left: -15px;
+					top: 0;
+
+					@include qodefScreenSize680 {
+						content: none;
+					}
+				}
+
+				@include qodefScreenSize680 {
+
+					&:after {
+						content: "";
+						display: block;
+						width: calc(100% - 28px);
+						height: 2px;
+						background-color: var(--qode-main-color);
+						position: absolute;
+						bottom: 41px;
+						margin: 0 14px;
+					}
+				}
+
+				> * {
+					padding: 0 14px;
+				}
+			}
+
+			.qodef-e-image {
+
+				&.qodef-two {
+					max-width: 339px; // 311 + 2x14
+
+					@include qodefScreenSize1440 {
+						max-width: 270px;
+					}
+
+					@include qodefScreenSize1280 {
+						max-width: 230px;
+					}
+
+					@include qodefScreenSize768 {
+						max-width: 100%;
+						margin-top: 24px;
+					}
+				}
+			}
+		}
+
+		.qodef-image-caption {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+			margin-top: 13px;
+
+			.qodef-caption-text {
+				font-size: 12px;
+				line-height: 1.5em;
+			}
+		}
+	}
+}

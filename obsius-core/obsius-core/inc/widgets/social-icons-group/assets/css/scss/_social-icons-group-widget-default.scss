@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Social Icons Group widget static style start
+   ========================================================================== */
+
+.qodef-social-icons-group {
+
+    &.qodef-alignment--center {
+        text-align: center;
+    }
+
+    &.qodef-alignment--right {
+        text-align: right;
+    }
+
+    &.qodef-with-circle--yes {
+
+        .qodef-icon-holder {
+
+            &.qodef--textual {
+                font-size: 13px;
+                line-height: 2.308em;
+                width: 2.385em;
+                height: 2.385em;
+                border-radius: 50%;
+                display: inline-block;
+                text-align: center;
+
+                a {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%!important;
+                    height: 100%!important;
+                }
+            }
+        }
+    }
+
+    .qodef-icon-holder {
+        margin-right: 9px;
+
+        a {
+            transition: $color-transition;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.qodef--textual {
+            @include qodefInfoStyle();
+
+            a {
+                color: inherit;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Social Icons Group widget variable style start
+   ========================================================================== */
+
+$local-widgets-area-map: (
+        '':(
+                link-color: null,
+                link-hover-color: null,
+                textual-link-color: null,
+                textual-link-hover-color: null,
+                icon-background-color: $additional-background-color,
+                icon-background-hover-color: $heading-color,
+                icon-with-background-link-hover-color: #fff,
+        ),
+);
+
+@each $key, $values in $local-widgets-area-map {
+    #{$key} .widget {
+        &.widget_obsius_core_social_icons_group {
+
+            .qodef-icon-holder {
+
+                a {
+                    @if (map-get($values, 'link-color') != null) {
+                        color: map-get($values, 'link-color');
+                    }
+
+                    &:hover {
+                        @if (map-get($values, 'link-hover-color') != null) {
+                            color: map-get($values, 'link-hover-color');
+                        }
+                    }
+                }
+
+                &.qodef--textual {
+
+                    a {
+                        @if (map-get($values, 'textual-link-color') != null) {
+                            color: map-get($values, 'textual-link-color');
+                        }
+
+                        &:hover {
+                            @if (map-get($values, 'textual-link-hover-color') != null) {
+                                color: map-get($values, 'textual-link-hover-color');
+                            }
+                        }
+                    }
+                }
+
+                &.qodef-layout--circle,
+                &.qodef-layout--square {
+                    @if (map-get($values, 'icon-background-color') != null) {
+                        background-color: map-get($values, 'icon-background-color');
+                    }
+
+                    &:hover {
+                        @if (map-get($values, 'icon-background-hover-color') != null) {
+                            color: map-get($values, 'icon-background-hover-color');
+                        }
+
+                        a {
+
+                            @if (map-get($values, 'icon-with-background-link-hover-color') != null) {
+                                color: map-get($values, 'icon-with-background-link-hover-color');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

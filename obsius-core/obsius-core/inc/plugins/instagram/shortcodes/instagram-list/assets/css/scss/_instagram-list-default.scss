@@ -1,0 +1,247 @@
+/* ==========================================================================
+   Instagram List shortcode styles
+   ========================================================================== */
+
+.qodef-instagram-list {
+
+    .qodef-profile-name-holder {
+        margin-bottom: 47px;
+
+        .qodef-m-title {
+            margin: 0;
+        }
+    }
+
+    #sb_instagram {
+        padding: 0 !important;
+
+        #sbi_images {
+            padding: 0 !important;
+        }
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // common
+
+    .sbi_photo_wrap {
+
+        a {
+            background-image: none !important;
+            height: auto !important;
+            padding-bottom: 0 !important;
+            opacity: 1!important;
+
+            &:before{
+                @include qodefOverlay();
+            }
+
+            &:after {
+                color: white;
+                content: '\f16d';
+                font-family: 'Font Awesome 5 Brands';
+                font-size: 20px;
+                left: 50%;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, calc(-50% + 10px));
+                transition: opacity .4s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.18,.79,.48,.99);
+            }
+
+            &:hover {
+                &:before{
+                    @include qodefOverlayHover();
+                }
+
+                &:after {
+                    opacity: 1;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            img {
+                display: inline-block !important;
+            }
+        }
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // slider
+
+    &.qodef-layout--slider {
+
+        @for $i from 0 to length($grid-columns-gutter-label) {
+
+            &.qodef-gutter--#{nth($grid-columns-gutter-label,$i+1)} {
+                $gutter-size: nth($grid-columns-gutter-size, $i+1);
+                $gutter-double-size: $gutter-size * 2;
+
+                #sb_instagram {
+
+                    #sbi_images {
+
+                        > .sbi_item {
+                            padding: 0 !important;
+
+                            @if ($gutter-size == 0) {
+                                margin: 0 !important;
+                            } @else {
+                                margin: 0 #{$gutter-double-size}px 0 0 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .qodef-instagram-swiper-container {
+            list-style: none;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 !important;
+            position: relative;
+            visibility: hidden;
+            z-index: 1;
+
+            .swiper-slide {
+
+                a,
+                img {
+                    width: 100%;
+                }
+            }
+
+            &.qodef-swiper--initialized {
+                visibility: visible;
+            }
+        }
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // gallery
+
+    &.qodef-layout--columns {
+
+        @for $i from 0 to length($grid-columns-gutter-label) {
+
+            &.qodef-gutter--#{nth($grid-columns-gutter-label,$i+1)} {
+                $gutter-size: nth($grid-columns-gutter-size, $i+1);
+                $gutter-double-size: $gutter-size * 2;
+
+                &.qodef--no-bottom-space {
+                    @if ($gutter-size == 0) {
+                        margin-bottom: 0;
+                    } @else {
+                        margin-bottom: -#{$gutter-double-size}px;
+                    }
+                }
+
+                #sb_instagram {
+
+                    #sbi_images {
+                        float: none;
+                        width: auto;
+
+                        @if ($gutter-size == 0) {
+                            margin: 0;
+                        } @else {
+                            margin: 0 -#{$gutter-size}px;
+                        }
+
+                        > .sbi_item {
+                            @if ($gutter-size == 0) {
+                                padding: 0 !important;
+                                margin: 0 !important;
+                            } @else {
+                                padding: 0 #{$gutter-size}px !important;
+                                margin: 0 0 #{$gutter-double-size}px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// body class added for plugin version 6 or above
+.qodef-sbi-instagram-plugin {
+
+    .qodef-instagram-list {
+
+        #sb_instagram {
+
+            #sbi_load,
+            .sb_instagram_header {
+                display: none;
+            }
+        }
+
+        &.qodef-layout--columns,
+        &.qodef-layout--slider {
+
+            @for $i from 0 to $grid-columns-layout-size {
+                $step: $i + 1;
+
+                &.qodef-col-num--#{$step} {
+                    $column-width: 100%/$step;
+
+                    #sb_instagram {
+                        #sbi_images {
+
+                            .sbi_item {
+                                width: $column-width;
+                            }
+                        }
+                    }
+
+                    &.qodef-responsive--predefined {
+
+                        #sb_instagram {
+                            #sbi_images {
+
+                                .sbi_item {
+
+                                    @if ($i > 0) {
+
+                                        @media only screen and (min-width: map-get($grid-columns-layout-map, $step)) {
+
+                                            &:nth-child(#{$step}n+1) {
+                                                clear: both;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.qodef-responsive--custom {
+
+                        #sb_instagram {
+                            #sbi_images {
+
+                                .sbi_item {
+
+                                    @if ($i > 0) {
+
+                                        @media only screen and (min-width: $screen-size-1441) {
+
+                                            &:nth-child(#{$step}n+1) {
+                                                clear: both;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Instagram List shortcode styles
+   ========================================================================== */

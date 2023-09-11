@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Standard Title layout styles
+   ========================================================================== */
+
+.qodef-page-title.qodef-title--standard-with-breadcrumbs {
+	background-color: transparent;
+	height: 192px;
+
+	.qodef-breadcrumbs {
+		margin-top: 24px;
+		padding: 0 50px;
+		@include qodefScreenSize680 {
+			padding: 0 28px;
+		}
+	}
+}

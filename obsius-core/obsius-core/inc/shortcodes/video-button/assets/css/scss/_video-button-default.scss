@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+
+.qodef-video-button {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+
+	&.qodef--has-description {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+
+		@include qodefScreenSize1024 {
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+		}
+
+		.qodef-m-description-text {
+			width: 25.65%;
+			margin-left: 24px;
+			align-self: flex-end;
+
+			@include qodefScreenSize1440 {
+				width: 49%;
+			}
+
+			@include qodefScreenSize1024 {
+				width: 100%;
+				margin-left: 0;
+				margin-top: 25px;
+			}
+
+			.qodef-svg--decoration {
+				color: var(--qode-decoration-color);
+				overflow: visible;
+
+				@include qodefAsterisk();
+			}
+
+			.qodef-m-more-text {
+				margin: 13px 0 0 0;
+				max-width: 93%;
+				font-size: 25px;
+				line-height: 32px;
+
+				@include qodefScreenSize1440 {
+					max-width: 100%;
+				}
+
+				@include qodefScreenSize680 {
+					font-size: 20px;
+					line-height: 26px;
+				}
+			}
+		}
+	}
+
+	.qodef-m-image {
+		position: relative;
+
+		&:after {
+			@include qodefOverlay();
+		}
+
+		&:hover {
+			&:after {
+				@include qodefOverlayHover();
+			}
+		}
+	}
+
+	.qodef-m-play {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $heading-color;
+		font-size: 106px;
+		line-height: 1;
+
+		span {
+			display: block;
+			line-height: inherit;
+
+			svg {
+
+				@include qodefScreenSize768 {
+					display: block;
+					width: 50%;
+					height: auto;
+					margin: 0 auto;
+				}
+
+				@include qodefScreenSize680 {
+					width: 25%;
+				}
+			}
+
+			&:before {
+				display: block;
+				line-height: inherit;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */

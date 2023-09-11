@@ -1,0 +1,132 @@
+/* ==========================================================================
+# Logo default style
+========================================================================== */
+
+#qodef-page-header {
+
+	.qodef-header-logo-link {
+
+		img {
+
+			&.qodef--main {
+				opacity: 1;
+			}
+
+			&.qodef--dark,
+			&.qodef--light {
+				opacity: 0;
+			}
+
+			&:not(.qodef--main) {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+			}
+		}
+
+		&.qodef-source--svg-path {
+
+			svg {
+				display: block;
+				width: 50px;
+				height: auto;
+				fill: currentColor;
+				stroke: currentColor;
+
+				&.qodef-svg--obsious-logo {
+					overflow: visible;
+
+					line {
+						transition: 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+						transform-origin: 25.7% 50.7%;
+						transform: rotate(var(--qodef-rotate-start));
+						transform: rotate(var(--qodef-rotate-end));
+
+						@for $i from 1 through 9 {
+							$angle: 22.5; //22.5 is 180/(i-1)
+							$rotate-start: ($i - 1) * -$angle;
+							$rotate-end: 360 - ($i - 1) * $angle;
+							$animation-delay: ($i - 1) * 10;
+
+							&:nth-of-type(#{$i}) {
+								--qodef-rotate-start: #{$rotate-start}deg;
+								--qodef-rotate-end: #{$rotate-end}deg;
+							}
+
+							&:nth-last-of-type(#{$i}) {
+								animation: qode-rotate-custom-logo 3.5s infinite #{$animation-delay}ms forwards;
+							}
+						}
+					}
+
+					path {
+						animation: qode-logo-letter 3.5s infinite forwards;
+					}
+				}
+			}
+		}
+
+		&.qodef-source--textual {
+			@include qodefHeadingStyle(h4);
+			transition: $color-transition;
+		}
+	}
+}
+
+#qodef-page-header-inner {
+
+	&.qodef-skin--light {
+
+		.qodef-header-logo-link {
+
+			img {
+
+				&.qodef--dark,
+				&.qodef--main {
+					opacity: 0;
+				}
+
+				&.qodef--light {
+					opacity: 1;
+				}
+			}
+
+			&.qodef-source--svg-path,
+			&.qodef-source--textual {
+				color: var(--qode-header-light-color) !important;
+
+				&:hover {
+					color: var(--qode-header-light-hover-color) !important;
+				}
+			}
+		}
+	}
+
+	&.qodef-skin--dark {
+
+		.qodef-header-logo-link {
+
+			img {
+
+				&.qodef--light,
+				&.qodef--main {
+					opacity: 0;
+				}
+
+				&.qodef--dark {
+					opacity: 1;
+				}
+			}
+
+			&.qodef-source--svg-path,
+			&.qodef-source--textual {
+				color: var(--qode-header-dark-color) !important;
+
+				&:hover {
+					color: var(--qode-header-dark-hover-color) !important;
+				}
+			}
+		}
+	}
+}

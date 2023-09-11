@@ -1,0 +1,101 @@
+.qodef-button {
+
+    &.qodef-layout--textual-huge {
+        padding: 0.629em 0 !important;
+        color: $heading-color;
+        background-color: transparent;
+        border: 0;
+        font-size: 116px;
+        display: flex;
+        width: max-content;
+
+        &.qodef-alignment--center {
+            margin: 0 auto;
+        }
+
+        &.qodef-alignment--left {
+            margin: 0 auto 0 0;
+        }
+
+        &.qodef-alignment--right {
+            margin: 0 0 0 auto;
+        }
+
+        @include qodefScreenSize1024 {
+            font-size: 106px;
+        }
+
+        @include qodefScreenSize768 {
+            font-size: 75px;
+        }
+
+        @include qodefScreenSize680 {
+            font-size: 34px;
+        }
+
+        @include qodefScreenSize480 {
+            font-size: 30px;
+        }
+
+        .qodef-m-text {
+            display: inline-block;
+        }
+
+        .qodef-svg--button-arrow-huge {
+            width: 0.707em;
+            height: 0.707em;
+            margin-left: 0.198em;
+
+            @include qodefButtonArrow();
+        }
+
+        .qodef-svg-rounding-holder {
+            display: block;
+            width: 100%;
+            position: absolute;
+            left: -0.190em;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--qode-decoration-color);
+
+            @include qodefScreenSize1024 {
+                left: 0;
+                top: 53%;
+            }
+
+            .qodef-svg--rounding {
+                height: 100%;
+                width: 105%;
+
+                path {
+                    stroke-dasharray: 2800;
+                    stroke-dashoffset: 2800;
+                }
+            }
+        }
+
+        &:hover {
+            color: var(--qode-main-color);
+
+            .qodef-svg--button-arrow-huge {
+                @include qodefButtonArrowHover();
+            }
+        }
+
+        &.qodef-responsive-size {
+
+            @include qodefScreenSize1024 {
+                font-size: 50px!important;
+            }
+
+            @include qodefScreenSize768 {
+                font-size: 48px!important;
+                margin: 0;
+            }
+
+            @include qodefScreenSize680 {
+                font-size: 24px!important;
+            }
+        }
+    }
+}

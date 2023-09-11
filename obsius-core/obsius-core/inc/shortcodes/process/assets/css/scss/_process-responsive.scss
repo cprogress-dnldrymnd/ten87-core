@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Process shortcode responsive styles
+   ========================================================================== */
+
+.qodef-process {
+
+    &.qodef-layout--vertical {
+
+        .qodef-process-item-holder {
+
+            .qodef-process-content {
+
+                @include qodefScreenSize768 {
+                    flex-direction: column;
+                }
+            }
+
+            .qodef-m-item-title {
+
+                @include qodefScreenSize1680 {
+                    width: 35%;
+                }
+
+                @include qodefScreenSize1440 {
+                    width: 40%;
+                }
+
+                @include qodefScreenSize1368 {
+                    width: 43%;
+                }
+
+                @include qodefScreenSize1280 {
+                    width: 41%;
+                }
+
+                @include qodefScreenSize1024 {
+                    width: 38%;
+                }
+
+                @include qodefScreenSize768 {
+                    width: 100%;
+                }
+            }
+
+            .qodef-m-item-text {
+
+                @include qodefScreenSize1680 {
+                    width: 25%;
+                }
+
+                @include qodefScreenSize1440 {
+                    width: 30%;
+                    margin-left: 8%;
+                }
+
+                @include qodefScreenSize1368 {
+                    width: 32%;
+                    margin-left: 5%;
+                }
+
+                @include qodefScreenSize1280 {
+                    width: 34%;
+                    margin-left: 5%;
+                }
+
+                @include qodefScreenSize1024 {
+                    width: 36%;
+                    margin-left: 4%;
+                }
+
+                @include qodefScreenSize768 {
+                    width: 363px;
+                    margin-left: 0;
+                }
+
+                @include qodefScreenSize680 {
+                    width: 100%;
+                }
+            }
+
+            .qodef-m-button {
+
+                @include qodefScreenSize768 {
+                    margin-left: 0;
+                    margin-top: 11px;
+                    position: absolute;
+                    right: 0;
+                }
+
+                @include qodefScreenSize680 {
+                    position: relative;
+                }
+            }
+        }
+    }
+}

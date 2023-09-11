@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-portfolio-navigation {
+	@include qodefRelativeLayout();
+	margin: 10px 0 3px;
+	padding-top: 74px;
+	border-top: 1px solid var(--qode-main-color);
+
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		a {
+
+			img {
+				max-width: 190px;
+				
+				@include qodefScreenSize768 {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+		
+		&.qodef--prev {
+			
+			.qodef-m-nav-icon {
+				margin-right: 5px;
+			}
+		}
+		
+		&.qodef--next {
+			flex-direction: row-reverse;
+			text-align: right;
+			margin-left: auto;
+			
+			.qodef-m-nav-icon {
+				margin-left: 5px;
+			}
+		}
+		
+		&.qodef--back-link {
+			position: absolute;
+			top: 0;
+			left: calc(50% - 16px); // 16 is half size of icon size
+			
+			.qodef-m-nav-icon {
+				font-size: 32px;
+			}
+		}
+	}
+
+	.qodef-single-portfolio-text-holder {
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 136px;
+	}
+
+	.qodef-portfolio-single-prev {
+		display: flex;
+		flex-direction: row;
+
+		img {
+			margin-right: 17px;
+		}
+	}
+
+	.qodef-single-portfolio-nav-title {
+		margin: 0;
+		
+		@include qodefScreenSize768 {
+			display: none;
+		}
+	}
+
+	.qodef-portfolio-single-next {
+		display: flex;
+		flex-direction: row-reverse;
+
+		img {
+			margin-left: 17px;
+		}
+
+		.qodef-single-portfolio-nav-title {
+			text-align: right;
+		}
+	}
+	
+	.qodef-m-nav-icon {
+		font-size: 30px;
+	}
+
+	.qodef-m-nav-label {
+		font-family: $heading-font;
+		font-size: 13px;
+		font-weight: 300;
+		line-height: 20px;
+		letter-spacing: 0.028em;
+		text-transform: uppercase;
+	}
+
+	.qodef-portfolio-single-prev, .qodef-portfolio-single-next {
+
+		.qodef-portfolio-single-nav-text-holder {
+			display: inline-block;
+			color: var(--qode-main-color);
+			background-color: transparent;
+			border: 1px solid var(--qode-main-color);
+			border-radius: 1.192em;
+			padding: 5px 13px 4px;
+
+			svg {
+				float: right;
+				position: relative;
+				top: 5px;
+				margin-left: 5px;
+
+				@include qodefButtonArrow();
+			}
+
+			.qodef-m-nav-label {
+				float: left;
+			}
+
+			&:hover {
+				svg {
+					@include qodefButtonArrowHover();
+				}
+			}
+		}
+	}
+}

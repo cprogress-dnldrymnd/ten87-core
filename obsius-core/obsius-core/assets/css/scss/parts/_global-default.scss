@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
+
+.obsius-core-page-inline-style {
+	position: absolute !important;
+	width: 0;
+	height: 0;
+	line-height: 1;
+	display: none;
+}
+
+.qodef-landing-copyright,
+.qodef-fullscreen-menu-copyright,
+.qodef-sidearea-copyright {
+	font-size: 11px;
+	line-height: 1.636em;
+	text-align: center;
+	margin: 0;
+
+	a {
+		@include qodefUnderlineInitiallyShown();
+	}
+}
+
+.qodef-custom-section-title-responsive {
+
+	.qodef-m-title {
+
+		@include qodefScreenSize1024 {
+			font-size: 116px!important;
+			line-height: 0.97em!important;
+		}
+
+		@include qodefScreenSize680 {
+			font-size: 75px!important;
+			line-height: 0.99em!important;
+		}
+	}
+}
+
+//css fix header transparent
+.qodef-header--transparent:not(.qodef-content--behind-header) {
+
+	.qodef-page-title .qodef-m-content {
+		padding-top: 0!important;
+	}
+
+	&.qodef-title-area--enabled {
+
+		#qodef-page-outer {
+			margin-top: 0!important;
+		}
+	}
+}
+
+@media only screen and (min-width: 2560px) {
+
+	.qodef-custom-font-2560 {
+		font-size: 400px!important;
+	}
+}
+
+.qodef-custom-break-text {
+
+}
+
+.qodef-e-blob-rev--element {
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	.qodef-svg--blob {
+		@include qodefAbsoluteLayout();
+		fill: currentColor;
+		overflow: visible;
+		filter: blur(3em);
+	}
+
+	@at-root .qodef-browser--safari &{
+		filter: blur(3em);
+
+		.qodef-svg--blob {
+			filter: none;
+			transform: translateZ(0);
+		}
+	}
+}
+
+.page-id-1012 {
+	&.qodef-gradient-background--enabled.qodef--html-loaded.qodef-gradient--top-right #qodef-page-wrapper:before{
+		opacity: .95;
+		animation: none;
+	}
+}

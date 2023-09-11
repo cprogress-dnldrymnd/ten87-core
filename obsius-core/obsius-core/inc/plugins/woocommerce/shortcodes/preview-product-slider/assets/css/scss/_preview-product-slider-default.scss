@@ -1,0 +1,250 @@
+/* ==========================================================================
+   Preview Product Slider shortcode style - start
+   ========================================================================== */
+
+.qodef-woo-preview-product-slider {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+    height: 100vh;
+    opacity: 0;
+
+    &.qodef-swiper--initialized {
+      opacity: 1;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+
+    .swiper-button-prev {
+        left: 0 !important;
+    }
+
+    .swiper-button-next {
+        right: 0 !important;
+    }
+
+    .qodef-woo-product-image {
+        position: relative;
+
+        a, img {
+            display: block;
+        }
+
+        a {
+            @include qodefAbsoluteLayout();
+        }
+    }
+
+    .qodef-woo-product-categories {
+        margin-top: 2px;
+    }
+
+    .qodef-top-slider,
+    .qodef-bottom-slider {
+        position: relative;
+
+        .qodef-m-swiper {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .qodef-e {
+            list-style-type: none;
+
+            .qodef-e-inner {
+                height: 100%;
+
+                .qodef-woo-product-categories {
+
+                    &.qodef-e-info {
+
+                        * {
+                            font-size: 13px;
+                            line-height: 1.769em;
+                            text-transform: unset;
+                        }
+                    }
+                }
+            }
+
+            .qodef-woo-product-image {
+                max-height: 100%;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    /* top slider */
+    .qodef-top-slider {
+        height: 83.35%;
+
+        .qodef-woo-product-image {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            justify-content: center;
+
+            .qodef-image-caption {
+                display: flex;
+                align-self: flex-start;
+                font-size: 12px;
+                line-height: 1.500em;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                
+                @include qodefScreenSize680 {
+                    display: none;
+                }
+            }
+        }
+
+        .qodef-e {
+
+            .qodef-e-inner {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+                padding: 120px 0 40px 0;
+
+                @include qodefScreenSize1440 {
+                    padding: 120px 0 117px 0;
+                }
+            }
+
+            .qodef-woo-product-image {
+                position: relative;
+                height: 100%;
+                padding-bottom: 30px;
+
+                img {
+                    height: 98.843%;
+                }
+            }
+        }
+
+        .qodef-woo-product-content {
+            width: 42%;
+            margin-bottom: 42px;
+            @include qodefScreenSize1440 {
+                width: 50%;
+                margin-bottom: 26px;
+            }
+        }
+
+        .qodef-woo-product-image {
+            @include qodefScreenSize1440 {
+                width: 42%;
+            }
+            @include qodefScreenSize768 {
+                width: 50%;
+            }
+            @include qodefScreenSize680 {
+                width: 100%;
+            }
+        }
+
+        .price {
+            font-size: 34px;
+            margin: 27px 0 0;
+        }
+
+        .qodef-woo-product-title {
+            max-width: 80%;
+        }
+
+        .qodef-woo-product-excerpt {
+            max-width: 48%;
+            margin: 30px 0 0;
+        }
+
+        .qodef-e-read-more {
+            margin: 37px 0 0;
+        }
+
+        .qodef-woo-product-mark {
+            top: 4px;
+
+            @media screen and (min-width: 1024px) and (max-width: 1680px) {
+                top: 2px;
+            }
+
+            @include qodefScreenSize680 {
+                top: 3px;
+            }
+        }
+    }
+
+    /* bottom slider */
+    .qodef-bottom-slider {
+        height: 16.65%;
+        padding-top: 38px;
+        border-top: 1px solid var(--qode-main-color);
+        @include qodefScreenSize680 {
+            border-top: 0;
+            border-bottom: 1px solid var(--qode-main-color);
+        }
+
+        .qodef-e {
+
+            .qodef-e-inner {
+                display: flex;
+                pointer-events: auto;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+
+                .qodef-woo-product-title {
+                    display: block;
+                    text-transform: uppercase;
+                    word-break: break-word;
+                }
+
+                .qodef-woo-product-title a,
+                .qodef-woo-product-categories.qodef-e-info * {
+                    pointer-events: none;
+                }
+            }
+
+            .qodef-woo-product-image {
+                display: flex;
+                align-items: center;
+                width: 56.3%;
+
+                img {
+                    height: 84%;
+                }
+            }
+        }
+
+        .qodef-woo-product-content {
+            height: 100%;
+        }
+
+        .qodef-woo-product-content {
+            width: 43.7%;
+            padding-left: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .qodef-woo-product-image a {
+            display: none;
+        }
+    }
+}
+
+/* ==========================================================================
+   Preview Product Slider shortcode style - end
+   ========================================================================== */

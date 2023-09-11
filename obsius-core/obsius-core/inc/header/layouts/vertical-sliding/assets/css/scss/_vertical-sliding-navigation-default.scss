@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Vertical Sliding navigation style
+   ========================================================================== */
+
+$menu-top-bottom-spacing: 0 0 18px;
+$menu-level-two-left-spacing: 0;
+
+.qodef-header--vertical-sliding {
+    
+    .qodef-header-vertical-sliding-navigation {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        padding: 0 48px;
+        width: 100%;
+        z-index: 100;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin: 0;
+                padding: 0;
+                position: relative;
+
+                .qodef-drop-down-second {
+                    transform: translateZ(0);
+                }
+
+                .qodef-drop-down-second-inner {
+                    display: block;
+                    padding: 0;
+                    position: relative;
+                    z-index: 997;
+                }
+
+                &.qodef--hide-link {
+                    
+                    > a {
+                        cursor: default;
+                    }
+                }
+            }
+        }
+
+        .qodef-menu-item-icon {
+            margin-right: 5px;
+        }
+
+        .qodef-mega-menu-widget-holder {
+            display: none;
+        }
+    
+        > ul {
+            width: 100%;
+            
+            > li {
+                border-top: 1px solid #fff;
+
+                &:last-child {
+                    border-bottom: 1px solid #fff;
+                }
+
+                &.menu-item-has-children {
+
+                    > a {
+                        padding-right: 148px;
+                        @include qodefScreenSize1440 {
+                            padding-right: 108px;
+                        }
+
+                        .qodef-menu-item-arrow {
+                            display: block;
+                        }
+                    }
+                }
+                
+                > a {
+                    @include qodefMenuLevelOneInitialStyle();
+                    font-size: 130px;
+                    line-height: 0.838em;
+                    display: inline-block;
+                    position: relative;
+                    margin: 10px 0;
+                    left: -10px;
+                    @include qodefScreenSize1440 {
+                        font-size: 80px;
+                    }
+
+                    .qodef-menu-item-arrow {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        width: 0.99em;
+                        height: 0.99em;
+                        transform: rotate(-45deg);
+                    }
+
+                    .qodef-menu-item-bullet {
+                        display: none;
+                    }
+
+                    .qodef-menu-item-text {
+                        display: inline-block;
+                        line-height: 1;
+
+                        &:after {
+                            content: none;
+                        }
+                    }
+                
+                    &:hover {
+                        @include qodefMenuLevelOneHoverStyle();
+                    }
+                }
+            
+                .qodef-drop-down-second-inner {
+                    
+                    > ul {
+                        padding: $menu-top-bottom-spacing;
+                        @include qodefScreenSize1440 {
+                            margin-top: 10px;
+                        }
+
+                        li {
+
+                            &:first-child {
+
+                                a {
+                                    margin-top: 0;
+                                }
+                            }
+                        }
+                    }
+                
+                    ul {
+                        padding-left: $menu-level-two-left-spacing;
+                    
+                        li {
+                        
+                            > a {
+                                @include qodefMenuLevelTwoInitialStyle();
+                                @include qodefMenuLevelTwoInitialTypographyStyle();
+                            }
+                        
+                            &:hover,
+                            &.current-menu-ancestor,
+                            &.current-menu-item {
+                                > a {
+                                    @include qodefMenuLevelTwoHoverStyle();
+                                }
+                            }
+                        }
+                    }
+                }
+            
+                &.current-menu-ancestor,
+                &.current-menu-item {
+                    
+                    > a {
+                        @include qodefMenuLevelOneHoverStyle();
+                    }
+                }
+            }
+        }
+
+        &.qodef-vertical-sliding-drop-down--below {
+            
+            ul li {
+                
+                .qodef-drop-down-second {
+                    display: none;
+                }
+            }
+        }
+
+        &.qodef-vertical-sliding-drop-down--side {
+            
+            .qodef-drop-down-second {
+                position: absolute;
+                top: 0;
+                width: 100%;
+
+                ul {
+                    background-color: #fff;
+                    left: calc(100% + 40px); //because of the padding right
+                    margin-left: 50px;
+                    opacity: 0;
+                    padding: 25px 20px;
+                    position: absolute;
+                    top: -23px;
+                    transition: all $transition-timing;
+                    visibility: hidden;
+                    width: 254px;
+
+                    &.qodef-float--open {
+                        margin-left: 0;
+                        opacity: 1;
+                        visibility: visible;
+                        z-index: 900;
+                    }
+
+                    ul {
+                        left: calc(100% + 20px); //because of the padding right
+                        top: -25px; //because of the padding top
+                        transition: all .2s ease;
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+}

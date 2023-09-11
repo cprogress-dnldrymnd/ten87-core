@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Product List Info Left styles
+   ========================================================================== */
+
+.qodef-woo-preview-product-slider {
+	
+	&.qodef-item-layout--info-left {
+		
+		.qodef-e-inner {
+			
+			.added_to_cart,
+			.button {
+				margin-top: 20px !important; // to override default list selector with id
+			}
+		}
+	}
+}

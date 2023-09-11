@@ -1,0 +1,305 @@
+/* ==========================================================================
+   Portfolio List shortcode styles
+   ========================================================================== */
+
+.qodef-portfolio-list {
+	article {
+		&.qodef-with--decoration-shape,
+		&.qodef-with--decoration-glow {
+
+			.qodef-e-post-link {
+				display: none;
+			}
+
+			.qodef-e-content {
+				display: none !important;
+			}
+		}
+
+		&.qodef-with--decoration-glow {
+			.qodef-e-inner {
+				overflow: visible;
+			}
+		}
+	}
+
+	&.qodef-layout--masonry.qodef-items--fixed {
+		article {
+			&.qodef-with--decoration-glow {
+				.qodef-e-inner {
+					overflow: visible;
+				}
+			}
+		}
+	}
+
+	&.qodef--pinterest-slider {
+
+		&.qodef--pinterest-one {
+
+			.swiper-slide {
+				width: 23.073%;
+
+				&:nth-child(4n+2) {
+					width: 35.4%;
+				}
+
+				&:nth-child(4n+3) {
+					width: 12.258%;
+				}
+
+				&:nth-child(4n+4) {
+					width: 23.018%;
+				}
+
+				@include qodefScreenSize768 {
+					width: 23%;
+
+					&:nth-child(4n+2) {
+						width: 22%;
+					}
+
+					&:nth-child(4n+3) {
+						width: 21%;
+					}
+
+					&:nth-child(4n+4) {
+						width: 24%;
+					}
+				}
+			}
+
+			@include qodefScreenSize680 {
+
+				.qodef-e-media-image img {
+					max-height: 300px;
+					-o-object-fit: cover;
+					object-fit: cover;
+				}
+			}
+		}
+
+		&.qodef--pinterest-two {
+
+			.swiper-slide {
+				width: 29.898%;
+
+				&:nth-child(4n+2) {
+					width: 16.4%;
+				}
+
+				&:nth-child(4n+3) {
+					width: 42%;
+				}
+
+				&:nth-child(4n+4) {
+					width: 16.018%;
+				}
+			}
+
+			.qodef-m-top-info {
+
+				.qodef-m-button {
+					margin-right: 50px;
+				}
+			}
+		}
+	}
+
+	&.qodef-subtitle-break--disabled {
+
+		.qodef-m-top-info {
+
+			.qodef-m-subtitle {
+
+				@include qodefScreenSize680 {
+
+					br {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.qodef-m-top-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 52px;
+
+		@include qodefScreenSize680 {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.qodef-m-title {
+			margin: 0;
+			line-height: 1;
+
+			.qodef-m-title-inner {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		.qodef-title-inner {
+			width: 70%;
+
+			@include qodefScreenSize680 {
+				width: 100%;
+			}
+		}
+
+		.qodef-m-subtitle {
+			margin: 15px 0 0;
+		}
+
+		.qodef-m-button {
+			margin-bottom: 6px;
+
+			@include qodefScreenSize680 {
+				margin-top: 15px;
+			}
+		}
+	}
+	
+	.qodef-e-inner {
+		position: relative;
+	}
+
+	.qodef-e-inner,
+	.qodef-e-media,
+	.qodef-e-content {
+		@include qodefRelativeLayout();
+	}
+
+	.qodef-e-media {
+
+		> * {
+			margin-bottom: 30px;
+		}
+
+		iframe {
+			display: block;
+			height: 100%;
+		}
+	}
+
+	.qodef-e-media-image {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		max-width: 100%;
+
+		a, img {
+			display: block;
+			width: 100%;
+		}
+
+		&.qodef--background {
+			width: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			img {
+				visibility: hidden;
+			}
+		}
+
+		@include qodefReplaceImageWithDecoration();
+	}
+
+	.qodef-e-title {
+		margin: 0;
+	}
+
+	.qodef-e-info {
+
+		> * {
+			@include qodefCategoryStyle();
+		}
+	}
+
+	.qodef-e-excerpt {
+		margin: 15px 0 0;
+	}
+
+	.qodef-e-read-more {
+		margin: 15px 0 0;
+	}
+
+	.qodef-e-top-holder {
+		margin-bottom: 2px;
+	}
+
+	.qodef-e-post-link {
+		@include qodefAbsoluteLayout();
+	}
+	
+	.qodef-m-pagination {
+		margin-top: 35px;
+	}
+
+	&.qodef-items--fixed {
+		
+		.qodef-e-image {
+			//because of the custom padding around item
+			height: 100%;
+			overflow: hidden;
+		}
+		
+		.qodef-e-media-image {
+			height: 100%;
+			
+			a {
+				@include qodefRelativeLayout();
+				height: 100%;
+			}
+		}
+	}
+
+	.qodef-custom-margin {
+
+		.qodef-e-inner {
+			width: auto;
+		}
+	}
+
+	.qodef-with--decoration-shape {
+		&:nth-last-of-type(odd) {
+			.qodef-e-media-image.qodef-replace-image-with--decoration-shape .qodef-decoration-holder .qodef-svg--decoration {
+				path {
+					animation-direction: alternate-reverse;
+				}
+			}
+		}
+	}
+
+	&.qodef--has-appear {
+		.qodef-e:not(.qodef-with--decoration-shape):not(.qodef-with--decoration-glow) {
+			opacity: 0;
+			transform: translateY(30px);
+			transition: opacity .5s cubic-bezier(0.46, 0, 0.36, 0.99) .1s, transform .7s cubic-bezier(.18,.79,.48,.99) .1s;
+
+			&:nth-of-type(2n+2){
+				transition-delay: .25s, .25s;
+			}
+
+			&:nth-of-type(3n+3){
+				transition-delay: .4s, .4s;
+			}
+
+			&:nth-of-type(4n+4){
+				transition-delay: .55s, .55s;
+			}
+
+
+			&.qodef--appeared {
+				opacity: 1;
+				transform: translateY(0px);
+			}
+		}
+	}
+}

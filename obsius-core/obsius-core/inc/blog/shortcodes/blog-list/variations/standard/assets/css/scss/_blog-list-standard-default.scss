@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Blog List styles
+   ========================================================================== */
+
+.qodef-blog {
+
+	.qodef-m-top-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 41px;
+
+		@include qodefScreenSize680 {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.qodef-m-title {
+			margin: 0;
+			font-family: $text-font;
+			font-size: 22px;
+			font-weight: 400;
+			letter-spacing: 0;
+			line-height: 35px;
+			color: $text-color;
+			@include qodefScreenSize1024 {
+				max-width: 75%;
+			}
+			@include qodefScreenSize680 {
+				max-width: 100%;
+			}
+
+			.qodef-m-title-inner {
+				display: flex;
+				align-items: center;
+
+				.qodef-m-title-text {
+					margin-bottom: 4px;
+				}
+
+				.qodef-m-icon-wrapper {
+					flex-shrink: 0;
+					margin-right: 8px;
+					font-family: $heading-font;
+					font-size: 80px;
+					font-weight: 300;
+					color: var(--qode-main-color);
+					position: relative;
+					top: 15px;
+				}
+			}
+		}
+
+		.qodef-m-subtitle-text {
+			font-family: $text-font;
+			font-size: 17px;
+			font-weight: 300;
+			letter-spacing: 0;
+			line-height: 23px;
+			max-width: 58%;
+
+			@include qodefScreenSize1024 {
+				max-width: 62%;
+			}
+
+			@include qodefScreenSize768 {
+				max-width: 84%;
+			}
+
+			@include qodefScreenSize680 {
+				max-width: 100%;
+			}
+		}
+
+		.qodef-m-more {
+			line-height: 1;
+			margin: 0 0 6px;
+
+			a p {
+				@include qodefButtonOutlinedColor();
+				padding: 8px 15px;
+				font-family: $heading-font;
+				font-weight: 300;
+				text-transform: uppercase;
+				font-size: 13px;
+				letter-spacing: 0.28px;
+				line-height: 1;
+
+				.qodef-svg--button-arrow {
+					width: 0.692em;
+					height: 0.692em;
+
+					@include qodefButtonArrow();
+				}
+
+				&:hover {
+					@include qodefButtonOutlinedHoverColor();
+
+					.qodef-svg--button-arrow {
+						@include qodefButtonArrowHover();
+					}
+				}
+			}
+		}
+	}
+	
+	&.qodef-item-layout--standard {
+		
+		&.qodef-col-num--1 {
+		
+			article:not(:last-child) {
+
+				&.format-quote, &.format-link {
+
+					.qodef-e-inner {
+						margin-bottom: 0;
+					}
+				}
+
+				.qodef-e-inner {
+					margin-bottom: 81px;
+				}
+
+				.qodef-e-info {
+
+					&.qodef-info--bottom {
+						margin-bottom: 36px;
+					}
+				}
+				
+				&.format-link {
+					
+					.qodef-e-link {
+						margin-bottom: 50px;
+					}
+				}
+				
+				&.format-quote {
+					
+					.qodef-e-quote {
+						margin-bottom: 50px;
+					}
+				}
+			}
+		}
+		
+		&:not(.qodef-col-num--1) {
+			
+			article {
+				
+				&.format-link {
+					
+					.qodef-e-link {
+						padding: 76px;
+					}
+					
+					.qodef-e-link-icon {
+						right: 40px;
+						width: 140px;
+					}
+				}
+				
+				&.format-quote {
+					
+					.qodef-e-quote {
+						padding: 76px;
+						
+						&:before {
+							font-size: 540px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Image With Text shortcode styles
+   ========================================================================== */
+
+.qodef-image-with-text {
+	@include qodefRelativeLayout();
+
+	&.qodef-alignment--center {
+		.qodef-m-content {
+			text-align: center;
+		}
+
+		.qodef-m-image {
+			justify-content: center;
+		}
+	}
+
+	&.qodef-alignment--left {
+		.qodef-m-content {
+			text-align: left;
+		}
+
+		.qodef-m-image {
+			justify-content: flex-start;
+		}
+	}
+
+	&.qodef-alignment--right {
+		.qodef-m-content {
+			text-align: right;
+		}
+
+		.qodef-m-image {
+			justify-content: flex-end;
+		}
+	}
+
+	&.qodef-image-border--yes {
+
+		.qodef-m-image {
+
+			img {
+				border: 1px solid var(--qode-main-color);
+			}
+		}
+	}
+	
+	.qodef-m-image {
+		@include qodefRelativeLayout();
+		
+		a, img {
+			display: block;
+		}
+	}
+	
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+	}
+	
+	.qodef-m-title {
+		margin: 35px 0 0;
+	}
+
+	span {
+
+		&.qodef-m-title {
+			display: block;
+			@include qodefHeadingStyle(span);
+		}
+	}
+	
+	.qodef-m-text {
+		margin: 12px 0 0;
+	}
+
+	&.qodef-hover--predefined {
+		.qodef-m-item-overlay {
+			@include qodefOverlay(rgba(10, 10, 10, .6));
+		}
+
+		&.qodef-image-border--yes {
+			.qodef-m-item-overlay {
+				left: 1px;
+				top: 1px;
+				height: calc(100% - 2px);
+				width: calc(100% - 2px);
+				transform: translateZ(0px);
+			}
+		}
+
+		.qodef-m-title {
+			.qodef-svg--button-arrow {
+				height: 14px;
+				width: auto;
+
+				path {
+					transition: transform .33s cubic-bezier(.22,.61,.36,1), opacity .01s;
+					transform: translate(-100%,100%);
+					opacity: 0;
+
+					&:nth-of-type(2){
+						display: none;
+					}
+				}
+			}
+		}
+
+
+		&:hover {
+			.qodef-m-item-overlay {
+				@include qodefOverlayHover();
+			}
+
+			.qodef-m-title {
+				.qodef-svg--button-arrow {
+					path {
+						transform: translate(0%,0%);
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		&.qodef--mouse-leave {
+			.qodef-m-title {
+				.qodef-svg--button-arrow {
+					path {
+						transform: translate(100%,-100%);
+						opacity: 0;
+						transition-delay: 0s, .3s;
+					}
+				}
+			}
+		}
+	}
+}

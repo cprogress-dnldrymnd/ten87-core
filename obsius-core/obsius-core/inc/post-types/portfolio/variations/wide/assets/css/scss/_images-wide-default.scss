@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Portfolio Single variation styles
+   ========================================================================== */
+
+.single-portfolio-item {
+
+    &.qodef-layout--wide {
+
+        .qodef-portfolio-title {
+            margin: -15px 0 5px;
+        }
+
+        #qodef-page-outer {
+
+            .qodef-content-grid {
+                width: auto;
+                margin: 0 50px;
+
+                @include qodefScreenSize1024 {
+                    margin: 0 54px;
+                }
+
+                @include qodefScreenSize680 {
+                    margin: 0 28px;
+                }
+            }
+        }
+
+        .qodef-portfolio-single {
+
+            &.qodef-layout--wide {
+
+                .qodef-portfolio-info {
+                    margin-top: 32px!important;
+                }
+
+                .qodef-media {
+                    margin-left: 42px;
+                    @include qodefScreenSize1024 {
+                        margin-left: 0;
+                    }
+
+                    .qodef-grid-item {
+                        display: block;
+                        margin-bottom: 28px;
+                        float: none;
+                    }
+                }
+
+                .qodef-portfolio-single-item {
+                    margin-bottom: 6px;
+                }
+
+                .qodef-variations--big {
+
+                    .qodef-e-content {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        @include qodefScreenSize1024 {
+
+            .qodef-e-content {
+
+                > .qodef-grid-inner {
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,251 @@
+/* ==========================================================================
+   Icon With Text shortcode styles
+   ========================================================================== */
+
+.qodef-icon-with-text {
+
+	.qodef-m-title {
+		margin: 0;
+
+		a {
+			display: block;
+		}
+	}
+
+	.qodef-m-content-text {
+		margin: 8px 0 0;
+	}
+
+	.qodef-m-button {
+		margin: 26px 0 0;
+	}
+
+	.qodef-m-icon-wrapper {
+		line-height: 1;
+	}
+
+	.qodef-icon-holder {
+		float: none;
+	}
+
+	.qodef-m-content {
+		@include qodefRelativeLayout();
+	}
+
+	&.qodef--custom-icon {
+
+		.qodef-m-icon-wrapper {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+
+			a, img {
+				display: block;
+			}
+		}
+	}
+
+	&.qodef--glow-icon {
+
+		&.qodef-glow-shape-animation--yes {
+
+			.qodef-m-icon-wrapper {
+
+				.qodef-glow-icon-holder {
+
+					.qodef-glow-icon {
+						animation: qodef-glow-gradients 4s infinite linear forwards;
+
+						&.qodef-two {
+							animation-duration: 5s;
+						}
+
+						&.qodef-three {
+							animation-duration: 6s;
+						}
+
+						&.qodef-four {
+							animation-duration: 7s;
+						}
+					}
+				}
+			}
+
+			&.qodef--glow-shape-two {
+				.qodef-m-icon-wrapper {
+					.qodef-glow-icon-holder {
+						.qodef-glow-icon {
+							animation-delay: -.5s;
+							animation-direction: reverse;
+						}
+					}
+				}
+			}
+
+			&.qodef--glow-shape-three {
+				.qodef-m-icon-wrapper {
+					.qodef-glow-icon-holder {
+						.qodef-glow-icon {
+							animation-delay: -.1s;
+						}
+					}
+				}
+			}
+
+			&.qodef--glow-shape-four {
+				.qodef-m-icon-wrapper {
+					.qodef-glow-icon-holder {
+						.qodef-glow-icon {
+							animation-delay: -1.5s;
+							animation-direction: reverse;
+						}
+					}
+				}
+			}
+		}
+
+		.qodef-m-icon-wrapper {
+			position: relative;
+
+			.qodef-glow-icon-holder {
+				display: block;
+				height: 151px;
+
+				.qodef-glow-icon {
+					display: block;
+					min-width: 153px;
+					height: 60.93%;
+					position: absolute;
+					bottom: 25px;
+					left: 0;
+					z-index: -1;
+					background: radial-gradient(closest-side, rgba(201, 60, 51, .9) 10%, rgba(50, 18, 23, 0) 65%);
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+					background-size: 160% 160%;
+					opacity: .95;
+
+					&.qodef-three {
+						min-width: 80px;
+						height: 46%;
+						background: radial-gradient(circle, rgba(201, 60, 51, 0.9) 5%, rgba(50, 18, 23, 0) 65%);
+					}
+				}
+			}
+		}
+
+		&.qodef--glow-shape-one {
+
+			.qodef-m-icon-wrapper {
+
+				.qodef-glow-icon-holder {
+
+					.qodef-glow-icon {
+
+						&.qodef-two {
+							transform: rotate(15deg) scale(.9);
+							left: 5px;
+							bottom: 44px;
+						}
+
+						&.qodef-three {
+							transform: translateX(100%);
+							bottom: 60px;
+						}
+					}
+				}
+			}
+		}
+
+		&.qodef--glow-shape-two {
+
+			.qodef-m-icon-wrapper {
+
+				.qodef-glow-icon-holder {
+
+					.qodef-glow-icon {
+
+						&.qodef-two {
+							transform: rotate(17deg) scale(1);
+							left: 27px;
+							bottom: 45px;
+						}
+
+						&.qodef-three {
+							transform: none;
+							bottom: 29px;
+							left: 15px;
+						}
+					}
+				}
+			}
+		}
+
+		&.qodef--glow-shape-three {
+
+			.qodef-m-icon-wrapper {
+
+				.qodef-glow-icon-holder {
+
+					.qodef-glow-icon {
+
+						&.qodef-two {
+							min-width: 101px;
+							height: 67%;
+							transform: translateX(40%);
+							left: 0;
+							bottom: 47px;
+						}
+
+						&.qodef-three {
+							transform: none;
+							bottom: 50px;
+							left: 12px;
+						}
+					}
+				}
+			}
+		}
+
+		&.qodef--glow-shape-four {
+
+			.qodef-m-icon-wrapper {
+
+				.qodef-glow-icon-holder {
+
+					.qodef-glow-icon {
+
+						&.qodef-two {
+							min-width: 101px;
+							height: 67%;
+							transform: translateX(47%);
+							left: 10px;
+							bottom: 3px;
+						}
+
+						&.qodef-three {
+							transform: none;
+							bottom: 34px;
+							left: 18px;
+						}
+
+						&.qodef-four {
+							transform: rotate(-18deg) scale(.9);
+							bottom: 50px;
+							left: 28px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.qodef--asterisk-icon {
+		.qodef-svg--decoration {
+			color: var(--qode-decoration-color);
+			overflow: visible;
+
+			@include qodefAsterisk();
+		}
+	}
+}

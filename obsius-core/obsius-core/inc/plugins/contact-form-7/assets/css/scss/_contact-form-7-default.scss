@@ -1,0 +1,57 @@
+.qodef-classic-contact-form {
+
+    input, textarea {
+        margin-bottom: 47px;
+        border: 0;
+        border-bottom: 1px solid #fff;
+        padding: 0 0 4px;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 23px;
+        font-family: $heading-font;
+
+        &:focus {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 23px;
+            font-family: $heading-font;
+        }
+    }
+
+    textarea {
+        margin-bottom: 32px;
+    }
+
+    .wpcf7-submit {
+        float: right;
+    }
+
+    &.qodef-form-50-50 {
+
+        .qodef-contact-data {
+
+            .qodef-name {
+                display: block;
+                width: calc(50% - 16px);
+                float: left;
+                margin-right: 32px;
+            }
+
+            .qodef-mail {
+                display: block;
+                width: calc(50% - 16px);
+                float: left;
+            }
+        }
+    }
+}
+
+.wpcf7-not-valid-tip {
+    position: relative;
+    top: -35px;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    text-align: center;
+    margin: 4.85em 0.5em 1em;
+}

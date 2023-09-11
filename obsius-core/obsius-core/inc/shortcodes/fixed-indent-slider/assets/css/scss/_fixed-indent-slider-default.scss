@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Fixed Indent Slider shortcode style - begin
+   ========================================================================== */
+
+$bottom-distance: 0;
+$side-spacing: 50px;
+
+.qodef-fixed-indent-slider-holder-outer {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	height: fit-content;
+	padding: 29px 0 93px 0;
+
+	&.qodef-show-holder-top-border--yes {
+
+		&:before {
+			content: "";
+			width: calc(100% - #{2 * $side-spacing});
+			height: 1px;
+			background-color: var(--qode-main-color);
+			position: absolute;
+			left: $side-spacing;
+			top: 0;
+
+			@include qodefScreenSize680 {
+				width: calc(100% - 56px);
+				left: 28px;
+			}
+		}
+	}
+
+	&.qodef-show-holder-bottom-border--yes {
+
+		&:after {
+			content: "";
+			width: calc(100% - #{2 * $side-spacing});
+			height: 1px;
+			background-color: var(--qode-main-color);
+			position: absolute;
+			left: $side-spacing;
+			bottom: 0;
+
+			@include qodefScreenSize680 {
+				width: calc(100% - 56px);
+				left: 28px;
+			}
+		}
+	}
+
+	&.qodef-slider--left {
+		flex-direction: row-reverse;
+
+		.qodef-left-info {
+			align-items: flex-end;
+			text-align: right;
+
+			.qodef-left-info-content {
+				padding: 0 $side-spacing 32px 10%;
+			}
+		}
+	}
+
+	.qodef-left-info {
+		width: 50.47%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		margin-top: -10px; // to align with slider
+
+		.qodef-left-info-content {
+			padding: 0 10% 32px $side-spacing;
+
+			.qodef-e-title {
+				margin: 0;
+			}
+
+			.qodef-e-text {
+				margin: 15px 0 0;
+				max-width: 432px;
+			}
+
+			.qodef-m-button {
+				margin-top: 28px;
+			}
+		}
+	}
+
+	.qodef-right-slider {
+		position: relative;
+		width: 49.53%;
+
+		.qodef-e-title {
+			margin: 0;
+		}
+
+		.qodef-fixed-indent-slider-holder {
+			margin-bottom: $bottom-distance;
+
+			.qodef-m-swiper {
+				overflow: hidden;
+				backface-visibility: hidden;
+			}
+
+			.qodef-m-item {
+
+				img {
+					border: 1px solid var(--qode-main-color);
+				}
+			}
+
+			.swiper-pagination-bullets {
+				display: none;
+				bottom: -$bottom-distance !important;
+			}
+		}
+
+		.qodef-m-item-overlay {
+			left: 1px;
+			top: 1px;
+			height: calc(100% - 2px);
+			width: calc(100% - 2px);
+			transform: translateZ(0px);
+		}
+	}
+
+	.qodef-m-item-link {
+		display: inline-block;
+	}
+
+	.qodef-m-item-overlay {
+		@include qodefOverlay(rgba(10, 10, 10, .6));
+	}
+
+	.qodef-m-item {
+		&:hover {
+			.qodef-m-item-overlay {
+				@include qodefOverlayHover();
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Fixed Indent Slider shortcode style - end
+   ========================================================================== */

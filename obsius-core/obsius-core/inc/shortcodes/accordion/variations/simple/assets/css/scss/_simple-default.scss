@@ -1,0 +1,345 @@
+/* ==========================================================================
+   Accordion shortcode styles
+   ========================================================================== */
+
+.qodef-accordion.qodef-layout--simple {
+	border-bottom: 1px solid #fff;
+	
+	.qodef-accordion-title {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0 0 0;
+		padding: 24px 0 24px 0;
+		transition: color .2s ease-out, background-color .2s ease-out;
+		cursor: pointer;
+		border-top: 1px solid #fff;
+		
+		&:first-child {
+			margin-top: 0;
+		}
+		
+		.qodef-accordion-mark {
+			position: relative;
+			flex-shrink: 0;
+			width: 37px;
+			height: 37px;
+			line-height: 1;
+			text-align: center;
+
+			span {
+				position: absolute;
+				display: block;
+				width: 100%;
+				top: 0;
+				left: 0;
+				transition: opacity .2s ease-out;
+
+				svg {
+					display: block;
+				}
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+				
+				&.qodef-icon--minus {
+					opacity: 0;
+				}
+				
+				&.qodef-icon--plus {
+					opacity: 1;
+				}
+			}
+		}
+		
+		&.ui-state-active,
+		&.ui-state-hover {
+
+			.qodef-accordion-mark {
+				
+				span {
+					
+					&.qodef-icon--minus {
+						opacity: 1;
+					}
+					
+					&.qodef-icon--plus {
+						opacity: 0;
+					}
+				}
+			}
+		}
+
+
+		html.touchevents & {
+
+			&.ui-state-hover {
+
+				.qodef-accordion-mark {
+
+					span {
+
+						&.qodef-icon--minus {
+							opacity: 0;
+						}
+
+						&.qodef-icon--plus {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			&.ui-state-active {
+
+				.qodef-accordion-mark {
+
+					span {
+
+						&.qodef-icon--minus {
+							opacity: 1;
+						}
+
+						&.qodef-icon--plus {
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.qodef-accordion-content {
+		padding: 15px 0 28px;
+		margin: 0;
+
+		.qodef-accordion-content-inner {
+
+			p {
+				margin: 0;
+				padding-left: 24px;
+
+				&:first-child {
+					position: relative;
+
+					&:before {
+						content: "";
+						display: block;
+						width: 13px;
+						height: 13px;
+						border-radius: 50%;
+						border: 1px solid currentColor;
+						position: absolute;
+						left: 0;
+						top: 4px;
+					}
+				}
+			}
+		}
+	}
+
+	$padding-left: 58px;
+	$left-position: 44.6vw;
+
+	&.qodef-behavior--numbered-accordion {
+
+		.qodef-accordion-title {
+			position: relative;
+			justify-content: flex-start;
+			align-items: flex-end;
+			padding: 6px 0 16px $padding-left;
+			overflow: hidden;
+			transition: all .3s ease-out;
+
+			@include qodefScreenSize1024 {
+				padding-left: 0;
+			}
+
+			@include qodefScreenSize680 {
+				padding: 16px 0 12px 0;
+				font-size: 23px;
+			}
+
+			.qodef-tab-title {
+				position: absolute;
+				padding-left: $padding-left;
+				padding-right: $padding-left;
+				left: $left-position;
+				line-height: 1;
+				margin-top: -0.1em;
+
+				@include qodefScreenSize1368 {
+					left: 44.4vw;
+					margin-top: 0;
+				}
+
+				@include qodefScreenSize768 {
+					left: 30vw;
+				}
+
+				@include qodefScreenSize680 {
+					margin-top: 10px;
+					left: 23vw;
+					padding-left: 0;
+					padding-right: 30px;
+					max-width: 70vw;
+					word-break: break-word;
+				}
+			}
+
+			.qodef-tab-title,
+			.qodef-accordion-mark {
+				top: 0;
+				transform: translateY(241px);
+				transition: all .5s ease-out; // delay when going down
+
+				@include qodefScreenSize1368 {
+					transform: translateY(213px);
+				}
+
+				@include qodefScreenSize1024 {
+					transform: translateY(188px);
+				}
+
+				@include qodefScreenSize768 {
+					transform: translateY(84px);
+				}
+
+				@include qodefScreenSize680 {
+					transform: translateY(19px);
+				}
+			}
+
+			.qodef-accordion-content {
+				position: absolute;
+				padding-left: $padding-left;
+				top: 150px;
+				left: $left-position;
+				opacity: 0;
+				transform: translateY(50%);
+				transition: transform .3s ease-out, opacity .3s ease-out;
+
+				&.ui-accordion-content-active {
+					opacity: 1;
+					transform: translateY(0%);
+					transition: transform .8s ease-out,opacity .8s ease-out;
+				}
+
+				@include qodefScreenSize768 {
+					display: none;
+					left: 30vw;
+				}
+
+				p {
+					@include qodefParagraphStyle();
+					text-transform: initial;
+				}
+			}
+
+			&.ui-state-active {
+				animation: qode-overflow-vissible 1s linear both;
+
+				.qodef-accordion-mark,
+				.qodef-tab-title {
+					transition: transform .5s ease-out;
+					transform: translateY(79px);
+
+					@include qodefScreenSize1024 {
+						transform: translateY(66px);
+					}
+
+					@include qodefScreenSize768 {
+						transform: translateY(65px);
+					}
+
+					@include qodefScreenSize680 {
+						transform: translateY(45px);
+					}
+					
+					@include qodefScreenSize480 {
+						transform: translateY(19px);
+					}
+				}
+			}
+
+			+ .qodef-accordion-content {
+				padding-top: 0;
+
+				@include qodefScreenSize768 {
+
+					br {
+						display: none;
+					}
+				}
+
+				@media only screen and (min-width: 769px) {
+					display: none !important;
+				}
+			}
+		}
+
+		.qodef-tab-count {
+			font-size: 511px; // 511px
+			line-height: 1;
+			width: $left-position;
+			transition: all .5s ease-out;
+
+			@include qodefScreenSize1368 {
+				width: 49.6vw;
+				font-size: 460px;
+			}
+
+			@include qodefScreenSize1024 {
+				font-size: 411px;
+				width: 50vw;
+			}
+
+			@include qodefScreenSize768 {
+				font-size: 220px;
+				width: 36vw;
+			}
+
+			@include qodefScreenSize680 {
+				font-size: 70px;
+				position: relative;
+				width: 30vw;
+				left: -4px;
+			}
+		}
+
+		.qodef-accordion-mark {
+			position: absolute;
+			right: 0;
+		}
+	}
+
+	&.qodef-behavior--toggle {
+
+		.qodef-accordion-content {
+			display: none;
+		}
+	}
+
+	&.qodef-behavior--toggle,
+	&.qodef-behavior--accordion {
+
+		.qodef-accordion-title {
+
+			.qodef-accordion-content {
+				display: none;
+			}
+		}
+	}
+}
+
+@include keyframes(qode-overflow-vissible) {
+	0% {
+		overflow: hidden;
+	}
+	100% {
+		overflow: visible;
+	}
+}

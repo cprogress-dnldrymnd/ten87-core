@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Blog List Classic styles
+   ========================================================================== */
+
+.qodef-blog {
+	
+	&.qodef-item-layout--classic {
+
+		.qodef-blog-item .qodef-e-media>* {
+			margin-bottom: 17px;
+		}
+
+		.qodef-blog-item .qodef-e-top-holder {
+			margin-bottom: 4px;
+		}
+
+		article {
+
+			.qodef-e-bottom-holder {
+				margin-top: 15px;
+
+				.qodef-e-read-more {
+
+					.qodef-button {
+
+						svg {
+							display: none;
+						}
+
+						.qodef-m-text {
+							font-family: $text-font;
+							font-size: 34px;
+							font-weight: 300;
+							letter-spacing: 0;
+							line-height: 37px;
+						}
+					}
+				}
+			}
+
+			.qodef-e-media-image {
+				&:after {
+					pointer-events: none;
+					@include qodefOverlay();
+				}
+			}
+
+			&:hover {
+				.qodef-e-media-image {
+					&:after {
+						@include qodefOverlayHover();
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */
+
+.qodef-social-share {
+
+	&.qodef-layout--text {
+		
+		li {
+			margin-right: 9px;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+				font-size: 13px;
+				text-transform: uppercase;
+				border: 1px solid #fff;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				width: 31px;
+				height: 31px;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */
