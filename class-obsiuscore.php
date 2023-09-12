@@ -1,12 +1,7 @@
 <?php
 /*
-Plugin Name: Obsius Core
-Plugin URI: https://qodeinteractive.com
-Description: Plugin that adds portfolio post type, shortcodes and other modules
-Author: Qode Interactive
-Author URI: https://qodeinteractive.com
+Plugin Name: Ten87 Core
 Version: 1.0.1
-Text Domain: obsius-core
 */
 if ( ! class_exists( 'ObsiusCore' ) ) {
 	class ObsiusCore {
