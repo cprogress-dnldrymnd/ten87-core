@@ -980,7 +980,7 @@ if ( ! function_exists( 'obsius_core_get_custom_post_type_excerpt' ) ) {
 	 */
 	function obsius_core_get_custom_post_type_excerpt( $custom_excerpt_length, $custom_excerpt = '' ) {
 		$item_excerpt   = get_the_excerpt();
-		$excerpt_length = intval( apply_filters( 'obsius_core_filter_post_excerpt_length', 500 ) ); // 180 is number of characters
+		$excerpt_length = intval( apply_filters( 'obsius_core_filter_post_excerpt_length', 180 ) ); // 180 is number of characters
 
 		if ( empty( $item_excerpt ) && ! empty( $custom_excerpt ) ) {
 			$item_excerpt = esc_html( $custom_excerpt );
