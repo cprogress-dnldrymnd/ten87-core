@@ -8,7 +8,7 @@ if ( post_password_required() ) {
 	if ( ! empty( $excerpt ) ) { ?>
 		<p itemprop="description" class="qodef-e-excerpt"><?php echo esc_html( get_the_content() ); ?></p>
 		<p>
-			<button class="modal-trigger" >Read More</a>
+			<button class="modal-trigger" >Read More</a> </button>
 		</p>
 		<?php
 	}
