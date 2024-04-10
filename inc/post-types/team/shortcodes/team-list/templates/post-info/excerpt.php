@@ -9,10 +9,11 @@ if (post_password_required()) {
 		<p itemprop="description" class="qodef-e-excerpt"><?php echo esc_html(get_the_content()); ?></p>
 		<?php if (!is_front_page()) { ?>
 			<p>
-				<button class="modal-trigger">Read More</a> </button>
+				<button class="modal-trigger" post_id="<?= get_the_ID() ?>">Read More</a> </button>
 			</p>
 		<?php } ?>
 <?php
+
 	}
 }
 ?>
